@@ -1,0 +1,8 @@
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/bin/Debug/FFTk-TheTales-of-TheHistoryExam.exe
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/bin/Debug/FFTk-TheTales-of-TheHistoryExam.pdb
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/obj/Debug/FFTk-TheTales-of-TheHistoryExam.csproj.AssemblyReference.cache
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/obj/Debug/FFTk-TheTales-of-TheHistoryExam.csproj.CoreCompileInputs.cache
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/obj/Debug/FFTk-TheTales-of-TheHistoryExam.exe
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/obj/Debug/FFTk-TheTales-of-TheHistoryExam.pdb
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/bin/Debug/brand.rtf
+/Users/marko/Library/CloudStorage/OneDrive-Tisztaszoftver/SeaShark/FFTK/FFTk-TheTales-of-TheHistoryExam/FFTk-TheTales-of-TheHistoryExam/bin/Debug/brand.txt

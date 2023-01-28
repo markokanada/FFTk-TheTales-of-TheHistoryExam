@@ -1,8 +1,8 @@
 ﻿<Properties StartupConfiguration="{5F21F551-669F-4112-A57F-FD73AF6671A2}|Default">
-  <MonoDevelop.Ide.ItemProperties.FFTk-TheTales-of-TheHistoryExam FirstBuild="True" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.FFTk-TheTales-of-TheHistoryExam PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.Workbench ActiveDocument="FFTk-TheTales-of-TheHistoryExam/Program.cs">
     <Files>
-      <File FileName="FFTk-TheTales-of-TheHistoryExam/Program.cs" Line="1" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/Program.cs" Line="34" Column="10" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
