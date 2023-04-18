@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    interface IKommunikalas
+    interface IKommunikalas : IKommunikacio
     {
         void Interakcio();
         void Bezaras();

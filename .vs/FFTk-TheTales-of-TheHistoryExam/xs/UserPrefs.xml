@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{5F21F551-669F-4112-A57F-FD73AF6671A2}|Default">
+  <MonoDevelop.Ide.ItemProperties.FFTk-TheTales-of-TheHistoryExam PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="FFTk-TheTales-of-TheHistoryExam/IGyogyulas.cs">
+    <Files>
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/ITargy.cs" Line="9" Column="40" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IGyogyitok.cs" Line="14" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IFegyver.cs" Line="10" Column="6" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IPancelzat.cs" Line="13" Column="2" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IHarc.cs" Line="8" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IRaktar.cs" Line="1" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IIMozgas.cs" Line="1" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKommunikacio.cs" Line="7" Column="2" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKezeles.cs" Line="9" Column="29" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKezelesRovidebb.cs" Line="9" Column="50" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKuldetes.cs" Line="9" Column="42" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKuldetesek.cs" Line="9" Column="39" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKKuldetes.cs" Line="1" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IMegjelenit.cs" Line="9" Column="39" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IMegjelenites.cs" Line="9" Column="44" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IKommunikalas.cs" Line="9" Column="44" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/ITerkep.cs" Line="9" Column="34" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IVedelem.cs" Line="9" Column="39" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/ISebzes.cs" Line="9" Column="39" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IMozgas.cs" Line="6" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IMMozgas.cs" Line="1" Column="1" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IHasznalas.cs" Line="9" Column="44" />
+      <File FileName="FFTk-TheTales-of-TheHistoryExam/IGyogyulas.cs" Line="15" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="FFTk-TheTales-of-TheHistoryExam" expanded="True">
+            <Node name="FFTk-TheTales-of-TheHistoryExam" expanded="True">
+              <Node name="IGyogyulas.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|anycpu" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

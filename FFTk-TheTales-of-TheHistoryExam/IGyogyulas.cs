@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface IGyogyulas
+    internal interface IGyogyulas : IHarc
     {
         int GyogyulasMerteke { get; set; }
         void Gyogyulas();

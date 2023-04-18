@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface IHasznalas
+    internal interface IHasznalas : IRaktar
     {
         void Elhasznalas();
     }

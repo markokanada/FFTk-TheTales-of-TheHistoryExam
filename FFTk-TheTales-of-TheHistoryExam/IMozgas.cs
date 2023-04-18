@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    interface IMozgas
+    interface IMozgas : IMMozgas
     {
         int Sebesseg { get; set; }
         void Balra(int lepes);

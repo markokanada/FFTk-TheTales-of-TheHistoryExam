@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface IKezelesRovidebb
+    internal interface IKezelesRovidebb : IRaktar
     {
         void Megnyitas();
         void Bezaras();

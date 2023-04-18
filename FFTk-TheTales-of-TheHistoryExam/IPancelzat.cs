@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface IPancelzat
+    internal interface IPancelzat : ITargy
     {
         int Vedelem { get; set; }
     }

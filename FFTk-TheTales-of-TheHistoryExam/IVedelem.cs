@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface IVedelem
+    internal interface IVedelem :IHarc
     {
         int VedelemMertek { get; set; }
         void Vedes();

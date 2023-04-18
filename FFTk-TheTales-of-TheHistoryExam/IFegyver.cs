@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface IFegyver
+    internal interface IFegyver : ITargy
     {
         int Sebzes { get; set; }
         bool Eldobhatosag { get; set; }

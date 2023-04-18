@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    interface IMegjelenites
+    interface IMegjelenites : IKommunikacio
     {
         string KarakterNev { get; set; }
         string NPCNev { get; set; }

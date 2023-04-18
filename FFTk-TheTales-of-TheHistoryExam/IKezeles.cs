@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    interface IKezeles
+    interface IKezeles : IKKuldetes
     {
         void Kovetkezo();
         void Elozo();
