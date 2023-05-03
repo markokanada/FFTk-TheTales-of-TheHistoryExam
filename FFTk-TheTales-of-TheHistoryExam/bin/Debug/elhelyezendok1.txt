@@ -1,0 +1,16 @@
+//Az elhelyezendok mindig y, majd x alapján vannak rendezve növekvő sorrendben. (balról jobbra) az id 0 a szobának az adatait tartalmazza
+//Kulcs van megadva, amit nem kell figyelembe venni, csak könnyeben olvasható (mint a JSON-nél)
+"id":0;"név":"Kezdő szoba";"Történet":"Ez egy kezdő szoba";"Kilépési_pont":"szoba2"
+"id":1;"típus":"semleges_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor"
+"id":2;"típus":"semleges_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor"
+"id":3;"típus":"semleges_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor"
+"id":4;"típus":"segító_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor én egy segítő vagyok"
+"id":5;"típus":"segító_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor én egy segítő vagyok"
+"id":6;"típus":"targy";"név":"xy";"szöveg":"A hűséges varázs tárgyad";"Sebzés":50;"Páncélzat":10;"Élet töltés":0
+"id":7;"típus":"targy";"név":"xy";"szöveg":"A hűséges varázs tárgyad";"Sebzés":40;"Páncélzat":10;"Élet töltés":0
+"id":8;"típus":"segító_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor én egy segítő vagyok"
+"id":9;"típus":"targy";"név":"xy";"szöveg":"A hűséges varázs tárgyad";"Sebzés":0;"Páncélzat":10;"Élet töltés":0
+"id":10;"típus":"targy";"név":"xy";"szöveg":"A hűséges varázs tárgyad";"Sebzés":0;"Páncélzat":0;"Élet töltés":100
+"id":11;"típus":"ellenséges_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor én egy ellenség vagyok";"Életerő":120;"Sebzés":8
+"id":12;"típus":"ellenséges_karakter";"név":"xy";"szöveg":"Üdvözöllek vándor én egy ellenség vagyok";"Életerő":120;"Sebzés":10
+"id":13;"típus":"kapu";"reset":false
