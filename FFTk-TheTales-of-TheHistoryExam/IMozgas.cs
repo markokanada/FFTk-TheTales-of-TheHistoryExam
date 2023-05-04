@@ -9,10 +9,10 @@ namespace FFTkTheTalesofTheHistoryExam
     interface IMozgas : IMMozgas
     {
         int Sebesseg { get; set; }
-        void Balra(int lepes);
-        void Jobbra(int lepes);
-        void Le(int lepes);
-        void Fel(int lepes);
+        void Balra();
+        void Jobbra();
+        void Le();
+        void Fel();
         void Noveles(int mertek);
     }
 }

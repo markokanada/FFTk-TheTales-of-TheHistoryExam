@@ -30,6 +30,11 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harc\Harc.cs" />
+    <Compile Include="Harc\IGyogyulas.cs" />
+    <Compile Include="Harc\IHarc.cs" />
+    <Compile Include="Harc\ISebzes.cs" />
+    <Compile Include="Harc\IVedelem.cs" />
     <Compile Include="IKezeles.cs" />
     <Compile Include="IKommunikalas.cs" />
     <Compile Include="IKuldetesek.cs" />
@@ -37,25 +42,25 @@
     <Compile Include="IMegjelenites.cs" />
     <Compile Include="IMozgas.cs" />
     <Compile Include="ITerkep.cs" />
+    <Compile Include="Mozgas\Mozgas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IFegyver.cs" />
-    <Compile Include="IGyogyitok.cs" />
-    <Compile Include="IGyogyulas.cs" />
-    <Compile Include="IHasznalas.cs" />
     <Compile Include="IKezelesRovidebb.cs" />
     <Compile Include="IKuldetes.cs" />
     <Compile Include="IMegjelenitHosszabb.cs" />
-    <Compile Include="IPancelzat.cs" />
-    <Compile Include="ISebzes.cs" />
-    <Compile Include="ITargy.cs" />
-    <Compile Include="IVedelem.cs" />
-    <Compile Include="IHarc.cs" />
     <Compile Include="IRaktar.cs" />
     <Compile Include="IIMozgas.cs" />
     <Compile Include="IKommunikacio.cs" />
     <Compile Include="IKKuldetes.cs" />
     <Compile Include="IMMozgas.cs" />
+    <Compile Include="Szoba\ISzoba.cs" />
+    <Compile Include="Szoba\ISzobaFactory.cs" />
+    <Compile Include="Szoba\SzobaFactory.cs" />
+    <Compile Include="Targy\IFegyver.cs" />
+    <Compile Include="Targy\IGyogyitok.cs" />
+    <Compile Include="Targy\IHasznalas.cs" />
+    <Compile Include="Targy\IPancelzat.cs" />
+    <Compile Include="Targy\ITargy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="brand.rtf">
@@ -64,6 +69,11 @@
     <None Include="brand.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Kommunikacio\" />
+    <Folder Include="Kuldetes\" />
+    <Folder Include="Raktar\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
