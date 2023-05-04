@@ -11,8 +11,9 @@ namespace FFTkTheTalesofTheHistoryExam
         public static void Main(string[] args)
         {
             Megjelenites megjelenito = new Megjelenites();
-            megjelenito.palyaMegjelenites("pálya1");
-            megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
+            //megjelenito.palyaMegjelenites("pálya1");
+            //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
+            megjelenito.menuMegjelenites();
 
             Console.ReadKey();
         }

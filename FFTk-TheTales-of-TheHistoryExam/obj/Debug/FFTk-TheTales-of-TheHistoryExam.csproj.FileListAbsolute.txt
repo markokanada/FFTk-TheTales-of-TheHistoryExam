@@ -15,3 +15,4 @@ D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHis
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.exe
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\pálya1.txt
+D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand2.txt

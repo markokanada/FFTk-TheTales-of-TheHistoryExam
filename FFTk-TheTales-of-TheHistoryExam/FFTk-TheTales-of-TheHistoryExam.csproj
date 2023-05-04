@@ -75,6 +75,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="brand2.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="demo_map.txt" />
     <Content Include="pálya1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
