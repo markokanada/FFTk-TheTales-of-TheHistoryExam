@@ -40,12 +40,50 @@ namespace FFTkTheTalesofTheHistoryExam
         //jobb és bal
         public int minX { get; private set; }
         public int maxX { get; private set; }
-        public int jelenlegiX { get; private set; }
+        public int jelenlegiX
+        {
+            get 
+            {
+                return jelenlegiX;
+            }
+            private set 
+            {
+                for (int i = 0; i < palya.GetLength(0); i++)
+                {
+                    for (int j = 0; j < palya.GetLength(1); j++)
+                    {
+                        if (palya[i, j] == "X" && palya[i, j - 1] != "[")
+                        {
+                            jelenlegiX = i;
+                        }
+                    }
+                }
+            }
+        }
 
         //fel és le
         public int minY { get; private set; }
         public int maxY { get; private set; }
-        public int jelenlegiY { get; private set; }
+        public int jelenlegiY
+        {
+            get
+            {
+                return jelenlegiY;
+            }
+            private set
+            {
+                for (int i = 0; i < palya.GetLength(0); i++)
+                {
+                    for (int j = 0; j < palya.GetLength(1); j++)
+                    {
+                        if (palya[i, j] == "X" && palya[i, j-1] != "[")
+                        {
+                            jelenlegiY = j;
+                        }
+                    }
+                }
+            }
+        }
 
 
         public Mozgas(int minx, int maxx, int jelenlegix, int miny, int maxy, int jelenlegiy)
