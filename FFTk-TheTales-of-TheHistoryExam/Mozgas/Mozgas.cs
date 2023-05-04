@@ -4,10 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FFTkTheTalesofTheHistoryExam
 {
     internal class Mozgas : IMozgas
     {
+
+        Megjelenites megjelenites = new Megjelenites();
+        string[,] palya => megjelenites.Palya("palya1");
 
         string[] NemLehetRalepni = new string[9] {"=>", "[", "]", "#", "!", "?", "X", "-", "*"};
 
@@ -31,6 +35,7 @@ namespace FFTkTheTalesofTheHistoryExam
                 }
             }
         }
+
 
         //jobb és bal
         public int minX { get; private set; }
@@ -58,30 +63,46 @@ namespace FFTkTheTalesofTheHistoryExam
 
         public void Balra()
         {
-            if (jelenlegiX > minX && 1 > minX)
+
+            if (NemLehetRalepni.Contains(palya[jelenlegiX - 1, jelenlegiY]) == false)
             {
-                jelenlegiX -= 1;
+                if (jelenlegiX > minX && 1 > minX)
+                {
+                    jelenlegiX -= 1;
+                }
             }
+           
         }
         public void Jobbra()
         {
-            if(jelenlegiX < maxX && 1 < maxX)
+            if (NemLehetRalepni.Contains(palya[jelenlegiX + 1, jelenlegiY]) == false)
             {
-                jelenlegiX += 1;
+                if (jelenlegiX < maxX && 1 < maxX)
+                {
+                    jelenlegiX += 1;
+                }
             }
+
         }
         public void Fel()
         {
-            if (jelenlegiY > minY && 1 > minY)
+            if (NemLehetRalepni.Contains(palya[jelenlegiX, jelenlegiY - 1]) == false)
             {
-                jelenlegiY -= 1;
+                if (jelenlegiY > minY && 1 > minY)
+                {
+                    jelenlegiY -= 1;
+                }
             }
+
         }
         public void Le()
         {
-            if (jelenlegiY < maxY && 1 < maxY)
+            if(NemLehetRalepni.Contains(palya[jelenlegiX, jelenlegiY + 1]) == false)
             {
-                jelenlegiY += 1;
+                if (jelenlegiY < maxY && 1 < maxY)
+                {
+                    jelenlegiY += 1;
+                }
             }
         }
 
