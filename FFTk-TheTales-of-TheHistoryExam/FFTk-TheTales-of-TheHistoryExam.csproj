@@ -45,7 +45,7 @@
     <Compile Include="Kommunikacio.cs" />
     <Compile Include="Kuldetes.cs" />
     <Compile Include="Megjelenites.cs" />
-    <Compile Include="Mozgas.cs" />
+    <Compile Include="Mozgas\Mozgas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="IKezelesRovidebb.cs" />
@@ -82,6 +82,11 @@
     <Content Include="pálya1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Kommunikacio\" />
+    <Folder Include="Kuldetes\" />
+    <Folder Include="Raktar\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>
