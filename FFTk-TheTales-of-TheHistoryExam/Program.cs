@@ -7,7 +7,7 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     class MainClass
     {
-       
+
         public static void Main(string[] args)
         {
             Megjelenites megjelenito = new Megjelenites();

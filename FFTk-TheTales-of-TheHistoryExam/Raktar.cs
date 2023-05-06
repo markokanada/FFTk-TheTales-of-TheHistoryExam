@@ -6,68 +6,127 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal class Raktar : IKezeles, ITargy, IFegyver, IGyogyitok, IPancelzat, IHasznalas, IMegjelenitHosszabb
+    internal class Raktar : IRaktar
     {
-        public int Meret { get; private set; }
+        private int meret;
+        public int Meret
+        {
+            get
+            {
+                return meret;
+            }
+            private set 
+            {
+                if (value > 0 && value <= 10)
+                {
+                    meret = value;
+                }
+                else
+                {
+                    meret = 5;
+                }
+            }
+        }
+
+        private string[] raktar;
+
+        public bool RaktarMeretMegadasa(int meret)
+        {
+            Meret = meret;
+            raktar = new string[Meret];
+
+            if (raktar.Length > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+
+        public string[] RaktarLekerdezes()
+        {
+            return raktar;
+        }
+
+        public string[] TargyTorles(string targynev)
+        {
+            List<string> ideiglenesTorleshez = raktar.ToList();
+            if (ideiglenesTorleshez.Contains(targynev) == true)
+            {
+                ideiglenesTorleshez.Remove(targynev);
+                raktar = ideiglenesTorleshez.ToArray();
+            }
+
+            return raktar;
+        }
+        public string[] TargyHozzadas(string targynev) //ha null, akkor nincs hely egy új tárgynak
+        {
+
+            if (raktar.Length > raktar.Count(x => x != null))
+            {
+                //if (raktar.Contains(targynev) == true)
+                //{
+                //majd darab növelés a megadott tárgynál
+                //}
+                raktar[raktar.Count(x => x != null)] = targynev;
+                
+                return raktar;
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+        //NE TÖRÖLD KI AZ ALÁBBIAKAT, MÉG GONDOLKOZOM, HOGY MI A TERV VELÜK !!!
+        public string ElozoTargy
+        {
+            get
+            {
+                if (JelenlegiTargyIndex > Meret)
+                {
+                    return raktar[JelenlegiTargyIndex - 1];
+                }
+                else { return null; } //Tömb elején van, később megcsinálható, olyanra, hogy az elejéről a végére ugrik... 
+            }
+        }
+
+        public string KovetkezoTargy
+        {
+            get
+            {
+                if (JelenlegiTargyIndex < Meret)
+                {
+                    return raktar[JelenlegiTargyIndex + 1];
+                }
+                else { return null; } //Tömb végén van, később megcsinálható, olyanra, hogy a végéről az elejére ugrik... 
+            }
+        }
+
+        public string JelenlegiTargy
+        {
+            get
+            {
+                return raktar[JelenlegiTargyIndex];
+            }
+        }
         
-        #region IKezeles
-        void IKezeles.Elozo()
+        public int JelenlegiTargyIndex
         {
-            throw new NotImplementedException();
+            get { return JelenlegiTargyIndex; }
+            private set
+            {
+                JelenlegiTargyIndex = Array.IndexOf(raktar, JelenlegiTargy);
+            }
         }
 
-        void IKezeles.Erzekeles()
+
+        public Raktar(int meret)
         {
-            throw new NotImplementedException();
+            RaktarMeretMegadasa(meret);
         }
-
-        void IKezeles.Kiiratas()
-        {
-            throw new NotImplementedException();
-        }
-
-        void IKezeles.Kovetkezo()
-        {
-            throw new NotImplementedException();
-        }
-
-       
-        #endregion
-
-        #region ITargy
-        string ITargy.Nev { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int ITargy.Szint { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-
-        #endregion
-
-        #region IFegyver
-        int IFegyver.Sebzes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        bool IFegyver.Eldobhatosag { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        #endregion
-
-        #region IGyogyitok
-        int IGyogyitok.Gyogyitas { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        #endregion
-
-        #region IPancelzat
-        int IPancelzat.Vedelem { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        
-        #endregion
-
-        #region IHasznalas
-        void IHasznalas.Elhasznalas()
-        {
-            throw new NotImplementedException();
-        }
-        #endregion
-
-        #region IMegjelenitesHosszabb
-        string IMegjelenitHosszabb.TargyakNeve { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IMegjelenitHosszabb.Sebzes { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IMegjelenitHosszabb.Gyogyitas { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IMegjelenitHosszabb.Pancel { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IMegjelenitHosszabb.Eletero { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        int IMegjelenitHosszabb.Meret { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        #endregion
     }
 }

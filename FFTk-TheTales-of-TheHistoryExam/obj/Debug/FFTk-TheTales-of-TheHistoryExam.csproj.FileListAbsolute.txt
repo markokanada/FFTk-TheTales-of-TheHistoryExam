@@ -16,3 +16,14 @@ D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHis
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\pálya1.txt
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand2.txt
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.AssemblyReference.cache
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.SuggestedBindingRedirects.cache
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.CoreCompileInputs.cache
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.exe
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand2.txt
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\pálya1.txt
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand.rtf
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand.txt
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.exe
+E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb

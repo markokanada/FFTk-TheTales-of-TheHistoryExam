@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal interface ITargy : IRaktar
+    internal interface ITargy
     {
-        string Nev { get; set; }
-        int Szint { get; set; }
+        string Nev { get;}
+        int Szint { get;}
+        int Darab { get;}
     }
 }

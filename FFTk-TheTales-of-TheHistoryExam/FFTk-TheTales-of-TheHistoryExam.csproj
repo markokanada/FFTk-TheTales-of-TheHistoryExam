@@ -65,6 +65,7 @@
     <Compile Include="Targy\IHasznalas.cs" />
     <Compile Include="Targy\IPancelzat.cs" />
     <Compile Include="Targy\ITargy.cs" />
+    <Compile Include="Targy\Targy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="brand.rtf">
