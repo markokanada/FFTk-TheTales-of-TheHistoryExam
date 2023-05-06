@@ -27,3 +27,4 @@ E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-T
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand.txt
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.exe
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
+D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand3.txt
