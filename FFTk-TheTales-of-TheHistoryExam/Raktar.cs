@@ -81,48 +81,6 @@ namespace FFTkTheTalesofTheHistoryExam
             }
         }
 
-        //NE TÖRÖLD KI AZ ALÁBBIAKAT, MÉG GONDOLKOZOM, HOGY MI A TERV VELÜK !!!
-        public string ElozoTargy
-        {
-            get
-            {
-                if (JelenlegiTargyIndex > Meret)
-                {
-                    return raktar[JelenlegiTargyIndex - 1];
-                }
-                else { return null; } //Tömb elején van, később megcsinálható, olyanra, hogy az elejéről a végére ugrik... 
-            }
-        }
-
-        public string KovetkezoTargy
-        {
-            get
-            {
-                if (JelenlegiTargyIndex < Meret)
-                {
-                    return raktar[JelenlegiTargyIndex + 1];
-                }
-                else { return null; } //Tömb végén van, később megcsinálható, olyanra, hogy a végéről az elejére ugrik... 
-            }
-        }
-
-        public string JelenlegiTargy
-        {
-            get
-            {
-                return raktar[JelenlegiTargyIndex];
-            }
-        }
-        
-        public int JelenlegiTargyIndex
-        {
-            get { return JelenlegiTargyIndex; }
-            private set
-            {
-                JelenlegiTargyIndex = Array.IndexOf(raktar, JelenlegiTargy);
-            }
-        }
-
 
         public Raktar(int meret)
         {
