@@ -44,6 +44,8 @@
     <Compile Include="ITerkep.cs" />
     <Compile Include="Kommunikacio.cs" />
     <Compile Include="Kuldetes.cs" />
+    <Compile Include="kviz\Ikerdes.cs" />
+    <Compile Include="kviz\Kerdesek.cs" />
     <Compile Include="Megjelenites.cs" />
     <Compile Include="Mozgas\Mozgas.cs" />
     <Compile Include="Program.cs" />

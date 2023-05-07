@@ -15,6 +15,7 @@ namespace FFTkTheTalesofTheHistoryExam
             //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
             //megjelenito.menuMegjelenites(0);
 
+
             
 
         Console.ReadKey();

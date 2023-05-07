@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam.kviz
 {
-    class Kerdesek
+    class Kviz : Ikerdes
     {
+
+
+
     }
 }
