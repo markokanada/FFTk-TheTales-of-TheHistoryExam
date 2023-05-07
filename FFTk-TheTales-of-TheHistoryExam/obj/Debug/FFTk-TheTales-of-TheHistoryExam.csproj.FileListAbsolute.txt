@@ -28,3 +28,14 @@ E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-T
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.exe
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand3.txt
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand3.txt
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand2.txt
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\pálya1.txt
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand.rtf
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand.txt
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.exe
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.AssemblyReference.cache
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.CoreCompileInputs.cache
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.exe
+C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
