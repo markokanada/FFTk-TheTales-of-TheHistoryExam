@@ -287,6 +287,11 @@ namespace FFTkTheTalesofTheHistoryExam
                             menuMegjelenites(2);
                         }
 
+                        if (menuItems[selectedIndex] == " Beállítások  ")
+                        {
+                            menuMegjelenites(4);
+                        }
+
                         if (menuItems[selectedIndex] == "   Credits    ")
                         {
                             menuMegjelenites(5);
@@ -412,7 +417,107 @@ namespace FFTkTheTalesofTheHistoryExam
             {
                 //TBA
             }
-            if (tipus == 4) { }
+            if (tipus == 4) {
+
+                string brand2 = "brand2.txt";
+                var file2 = File.ReadAllLines(brand2);
+                int sorhossz2 = file2[0].ToCharArray().Length;
+                int sormagassag2 = file2.Count();
+                
+
+
+                string brand = "brand.txt";
+                var file = File.ReadAllLines(brand);
+                int sorhossz = file[0].ToCharArray().Length;
+                int sormagassag = file.Count();
+                
+
+
+                int value = 10;
+                bool isChecked = false;
+
+                Console.CursorVisible = false;
+
+                while (true)
+                {
+                    int counter2 = 0;
+                    int counter = 0;
+                    Console.Clear();
+                    foreach (var sor2 in file2)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(Convert.ToInt32((w - 0 - sorhossz2) * 0.7), (h - 1 - sormagassag2) + counter2);
+                        Console.WriteLine(sor2);
+                        counter2++;
+                    }
+
+                    foreach (var sor in file)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(Convert.ToInt32((w - 0 - sorhossz) * 0.7), 1 + counter);
+                        Console.WriteLine(sor);
+                        counter++;
+                    }
+
+                    GombMegjelenites("[ESC] a főmenübe való visszalépéshez.", 0, 1);
+
+                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32(sormagassag * 1.6));
+                    Console.Write("Be/ki\t");
+                    Console.BackgroundColor = isChecked ? ConsoleColor.Red : ConsoleColor.Green;
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.Write("  ");
+
+                    
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.Write("\n");
+                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32(sormagassag * 2.5));
+                    Console.Write("Hangerő\t");
+                    for (int i = 1; i <= 20; i++)
+                    {
+                        
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        if (i <= value)
+                        {
+
+                            Console.Write("I");
+                        }
+                        else
+                        {
+                            Console.Write(".");
+                        }
+                    }
+
+                    
+                    while (!Console.KeyAvailable)
+                    {
+                        System.Threading.Thread.Sleep(50);
+                    }
+
+                    
+                    ConsoleKey key = Console.ReadKey(true).Key;
+                    if (key == ConsoleKey.Escape)
+                    {
+                        menuMegjelenites(1);
+                    }
+                    else if (key == ConsoleKey.Spacebar)
+                    {
+                        isChecked = !isChecked;
+                    }
+                    else if (key == ConsoleKey.LeftArrow && !isChecked && value > 1)
+                    {
+                        value--;
+                    }
+                    else if (key == ConsoleKey.RightArrow && !isChecked && value < 20)
+                    {
+                        value++;
+                    }
+                    
+                }
+                
+                Console.CursorVisible = false;
+
+            }
             if (tipus == 5) {
 
 
@@ -492,7 +597,7 @@ namespace FFTkTheTalesofTheHistoryExam
 
                     if (Console.KeyAvailable && Console.ReadKey(true).Key == ConsoleKey.Escape)
                     {
-                        break;
+                        menuMegjelenites(1);
                     }
                 }
 

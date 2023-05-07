@@ -18,6 +18,8 @@ namespace FFTkTheTalesofTheHistoryExam
 
 
 
+
+
             Console.ReadKey();
         }
     }
