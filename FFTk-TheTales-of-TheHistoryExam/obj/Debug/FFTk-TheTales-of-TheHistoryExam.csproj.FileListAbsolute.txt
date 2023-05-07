@@ -39,3 +39,4 @@ C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FF
 C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.CoreCompileInputs.cache
 C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.exe
 C:\Users\molna\OneDrive\Neumann\11osztaly\IKT\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
+D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand4.txt

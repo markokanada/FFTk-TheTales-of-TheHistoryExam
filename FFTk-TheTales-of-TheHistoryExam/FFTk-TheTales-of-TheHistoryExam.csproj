@@ -83,6 +83,9 @@
     <Content Include="brand3.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <Content Include="brand4.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="demo_map.txt" />
     <Content Include="pálya1.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

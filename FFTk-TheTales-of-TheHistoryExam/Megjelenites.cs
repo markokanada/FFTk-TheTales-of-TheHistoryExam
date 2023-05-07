@@ -430,7 +430,12 @@ namespace FFTkTheTalesofTheHistoryExam
                 var file = File.ReadAllLines(brand);
                 int sorhossz = file[0].ToCharArray().Length;
                 int sormagassag = file.Count();
-                
+
+                string brand4 = "brand4.txt";
+                var file4 = File.ReadAllLines(brand4);
+                int sorhossz4 = file4[0].ToCharArray().Length;
+                int sormagassag4 = file4.Count();
+
 
 
                 int value = 10;
@@ -442,6 +447,7 @@ namespace FFTkTheTalesofTheHistoryExam
                 {
                     int counter2 = 0;
                     int counter = 0;
+                    int counter4 = 0;
                     Console.Clear();
                     foreach (var sor2 in file2)
                     {
@@ -460,8 +466,16 @@ namespace FFTkTheTalesofTheHistoryExam
                     }
 
                     GombMegjelenites("[ESC] a főmenübe való visszalépéshez.", 0, 1);
+                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32(sormagassag * 1.2));
+                    foreach (var sor in file4)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Green;
+                        Console.SetCursorPosition(Convert.ToInt32((w - 0 - sorhossz4-sorhossz2) * 0.4), Convert.ToInt32(sormagassag*1.3) + counter4);
+                        Console.WriteLine(sor);
+                        counter4++;
+                    }
 
-                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32(sormagassag * 1.6));
+                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32((sormagassag+sormagassag4) * 1.2));
                     Console.Write("Be/ki\t");
                     Console.BackgroundColor = isChecked ? ConsoleColor.Red : ConsoleColor.Green;
                     Console.ForegroundColor = ConsoleColor.White;
@@ -471,7 +485,7 @@ namespace FFTkTheTalesofTheHistoryExam
                     Console.ResetColor();
                     Console.ForegroundColor = ConsoleColor.Green;
                     Console.Write("\n");
-                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32(sormagassag * 2.5));
+                    Console.SetCursorPosition(Convert.ToInt32(w * 0.2), Convert.ToInt32((sormagassag+sormagassag4) * 1.6));
                     Console.Write("Hangerő\t");
                     for (int i = 1; i <= 20; i++)
                     {
