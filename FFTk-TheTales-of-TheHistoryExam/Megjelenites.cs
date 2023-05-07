@@ -98,12 +98,30 @@ namespace FFTkTheTalesofTheHistoryExam
             return null;
         }
 
-        public void GombMegjelenites(string szoveg)
+        public void GombMegjelenites(string szoveg, int irany, int szinSéma) //0: bal, 1: jobb; 0: fehér-piros, 1: fekete-zöld
         {
+
+            if(szinSéma == 0)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.BackgroundColor = ConsoleColor.White;
+            }
+
+            if (szinSéma == 1)
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.Black;
+            }
+
+            if(irany == 0) { 
             Console.SetCursorPosition(Convert.ToInt32(w * 0.05), Convert.ToInt32(h * 0.95));
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.BackgroundColor = ConsoleColor.White;
             Console.Write(szoveg);
+            }
+            if(irany == 1)
+            {
+                Console.SetCursorPosition(Convert.ToInt32((w * 0.95)-szoveg.ToCharArray().Length), Convert.ToInt32((h * 1)-1));
+                Console.Write(szoveg);
+            }
         }
 
         public void ParbeszedMegjelenites(string parbeszedAdatok)
@@ -114,8 +132,9 @@ namespace FFTkTheTalesofTheHistoryExam
         }
         public void menuMegjelenites(int tipus) //0: üdvözlő képernyő 1: Főmenű, 2: story mode menü, 3: challenge mode menu 4: beállítások menü, 5: credits menu, 6: kilépés menü, 7: futás közbeni menü, 8: randomized töltő
         {
-
-
+            Console.CursorVisible = false;
+            Console.ForegroundColor = ConsoleColor.Green;
+            Console.BackgroundColor = ConsoleColor.Black;
 
             if (tipus == 0)
             {
@@ -268,6 +287,11 @@ namespace FFTkTheTalesofTheHistoryExam
                             menuMegjelenites(2);
                         }
 
+                        if (menuItems[selectedIndex] == "   Credits    ")
+                        {
+                            menuMegjelenites(5);
+                        }
+
                         if (menuItems[selectedIndex] == "   Kilépés    ")
                         {
                             System.Environment.Exit(0);
@@ -386,36 +410,75 @@ namespace FFTkTheTalesofTheHistoryExam
             }
             if (tipus == 3)
             {
-
+                //TBA
             }
             if (tipus == 4) { }
             if (tipus == 5) {
+
+
+
+
                 Console.CursorVisible = false;
-                Console.ForegroundColor = ConsoleColor.Yellow;
 
                 string[] lines = {
-            "PROJEKTVEZETŐ",
-            "Buborék Márkó",
+            "\t         PROJEKTVEZETŐ         ",
+            "\t         Buborék Márkó         ",
             "",
-            "HELYETTES PROJEKTVEZETŐ",
-            "Bacsa Dániel",
+            "\t    HELYETTES PROJEKTVEZETŐ    ",
+            "\t          Bacsa Dániel         ",
             "",
-            "FEJLESZTŐK",
-            "Fábián Szabolcs",
-            "Molnár Márk",
-            "Szász Csaba",
-            "",
-            "","",
+            "\t           FEJLESZTŐK          ",
+            "\t        Fábián Szabolcs        ",
+            "\t          Molnár Márk          ",
+            "\t          Szász Csaba          ",
+            "","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
         };
+
+                int sormagassagteszt = (int)(h * 1);
+                int maxsor = lines.Length - 1;
 
                 while (true)
                 {
+
+                    string brand2 = "brand2.txt";
+                    var file2 = File.ReadAllLines(brand2);
+                    int sorhossz2 = file2[0].ToCharArray().Length;
+                    int sormagassag2 = file2.Count();
+                    int counter2 = 0;
+
+
+                    string brand = "brand.txt";
+                    var file = File.ReadAllLines(brand);
+                    int sorhossz = file[0].ToCharArray().Length;
+                    int sormagassag = file.Count();
+                    int counter = 0;
+
+
                     Console.Clear();
-                    Console.SetCursorPosition(0, Console.WindowHeight - 1);
+                    foreach (var sor in file)
+                    {
+                        Console.SetCursorPosition(Convert.ToInt32((w - 0 - sorhossz) * 0.7), 1 + counter);
+                        Console.WriteLine(sor);
+                        counter++;
+                    }
+
+                    foreach (var sor2 in file2)
+                    {
+                        Console.SetCursorPosition(Convert.ToInt32((w - 0 - sorhossz2) * 0.7), (h - 1 - sormagassag2) + counter2);
+                        Console.WriteLine(sor2);
+                        counter2++;
+                    }
+
+                    GombMegjelenites("[ESC] a főmenübe való visszalépéshez.",1,1);
 
                     for (int i = 0; i < lines.Length; i++)
                     {
-                        Console.WriteLine(lines[i]);
+                        int sor = -sormagassagteszt + i + maxsor;
+                        if (sor < Console.WindowHeight && sor >= 0)
+                        {
+                            Console.SetCursorPosition(0, sor);
+                            Console.WriteLine(lines[i]);
+                        }
                     }
 
                     string temp = lines[0];
@@ -433,10 +496,8 @@ namespace FFTkTheTalesofTheHistoryExam
                     }
                 }
 
-                Console.ResetColor();
-                Console.Clear();
-                Console.WriteLine("Program leállítva, nyomj meg egy billentyűt a kilépéshez!");
-                Console.ReadKey(true);
+
+
             }
 
 
