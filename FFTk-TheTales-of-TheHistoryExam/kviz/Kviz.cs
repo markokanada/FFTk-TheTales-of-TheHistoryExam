@@ -52,52 +52,10 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
 
         //Kvíz Test
 
-        public string kvizTest(string FajlNev)
+        public string[] kvizTest(string FajlNev)
         {
-            //Kvíz feliar beolvasása
-            string[] kvizFelirat = new string[6];
-            StreamReader felirat = new StreamReader("kvizFelirat.txt", Encoding.Default);
-            for (int i = 0; i < 6; i++)
-            {
-                kvizFelirat[i] = felirat.ReadLine();
-            }
-            felirat.Close();
-
-
-            for (int i = 0; i < kvizFelirat.Count(); i++)
-            {
-                Console.WriteLine(kvizFelirat[i]);
-            }
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("INFORMÁCIÓK:");
-            Console.ResetColor();
-            Console.WriteLine("\t- A kvíz összesen 5 kérdést tartalmaz, mindegyikhez 3 válaszlehetőség tartozik.");
-            Console.WriteLine("\t- A válaszokat az 'a', 'b' vagy 'c' betűkkel lehet jelölni.");
-            Console.WriteLine("\t- Minden kérdéshez csak egy helyes válasz tartozik.");
-            Console.WriteLine("\t- A kvíz célja a játékosok tudásának tesztelése.");
-
-            Console.WriteLine();
-
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("SZABÁLYOK:");
-            Console.ResetColor();
-            Console.WriteLine("\t- A játékosnak minden kérdésre egy választ kell adnia, az üres válasz vagy több válasz megadása nem megengedett.");
-            Console.WriteLine("\t- Az összes kérdés ugyanannyi pontot ér, a helyes válaszokért járó pontokat összeadjuk.");
-            Console.WriteLine("\t- A játékos csak egyszer adhatja meg a válaszát, módosítás nem lehetséges.");
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine("[ENTER]");
-            Console.ReadKey();
-            Console.ResetColor();
-
-            Console.Clear();
-
-            //Kvíz teszt
-            for (int i = 0; i < kvizFelirat.Count(); i++)
-            {
-                Console.WriteLine(kvizFelirat[i]);
-            }
-
+            
+            //Kvíz
             Kviz kivz = new Kviz(FajlNev);
             List<string[]> KvizAdatok = kivz.beolvasas(FajlNev);
             for (int i = 0; i < KvizAdatok.Count; i++)
@@ -126,18 +84,10 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
                 Console.WriteLine();
             }
 
-            if (Osszpont == 5)
-            {
-                Console.WriteLine("Gratulálunk! Minden válaszod helyes!");
-            }else if(Osszpont < 5 || Osszpont > 1)
-            {
-                Console.WriteLine("Még fejlődnöd kell. Nem érted el a max pontot.");
-            }
-            else
-            {
-                Console.WriteLine("Sajnos elvesztetted a játékokt. A pontszámod 0.");
-            }
-            return "Pontszámod: " + Osszpont;
+            //Megjelenítéshez 
+            string[] megjelenites = new string[] { Osszpont.ToString() };
+
+            return megjelenites;
 
         }
 
