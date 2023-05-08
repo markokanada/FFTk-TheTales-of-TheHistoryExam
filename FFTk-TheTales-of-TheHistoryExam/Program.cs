@@ -13,9 +13,10 @@ namespace FFTkTheTalesofTheHistoryExam
             Megjelenites megjelenito = new Megjelenites();
             //megjelenito.palyaMegjelenites("pálya1");
             //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
-            megjelenito.menuMegjelenites(0);
+            //megjelenito.menuMegjelenites(0);
+            Kviz kviz = new Kviz();
 
-
+            Console.WriteLine(kviz.);
 
 
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace FFTkTheTalesofTheHistoryExam
 {
     internal class Kuldetes : ITerkep, IKuldetesek, IKezeles, IMegjelenit
