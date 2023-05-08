@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 
 namespace FFTkTheTalesofTheHistoryExam
@@ -11,7 +12,46 @@ namespace FFTkTheTalesofTheHistoryExam
     {
 
         Megjelenites megjelenites = new Megjelenites();
-        string[,] palya => megjelenites.Palya("palya1");
+
+        private string[,] palya;
+
+        public string[,] Palya
+        {
+            get
+            {
+                return palya;
+            }
+            private set
+            {
+                palya = value;
+            }
+        }
+
+
+        public string[,] palyaBeolvasas(string fajlnev)
+        {
+            
+            string[] lines = File.ReadAllLines(fajlnev);
+            int SorokSzama = lines.Length;
+            int  OszlopokSzama = lines[0].Length;
+
+            string[,] matrix = new string[SorokSzama, OszlopokSzama];
+
+            for (int i = 0; i < SorokSzama; i++)
+            {
+                for (int j = 0; j < OszlopokSzama; j++)
+                {
+                    matrix[i, j] = lines[i][j].ToString();
+                }
+            }
+
+            return matrix;
+        }
+
+        public Mozgas()
+        {
+            Palya = palyaBeolvasas("pálya1.txt");
+        }
 
         string[] NemLehetRalepni = new string[9] {"=>", "[", "]", "#", "!", "?", "X", "-", "*"};
 
@@ -86,17 +126,6 @@ namespace FFTkTheTalesofTheHistoryExam
         }
 
 
-        public Mozgas(int minx, int maxx, int jelenlegix, int miny, int maxy, int jelenlegiy)
-        {
-            minX = minx;
-            maxX = maxx;
-            
-            minY = miny;
-            maxY = maxy;
-            
-            jelenlegiX = jelenlegix;
-            jelenlegiY = jelenlegiy;
-        }
 
 
         public void Balra()
