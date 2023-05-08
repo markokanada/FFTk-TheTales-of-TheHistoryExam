@@ -1,0 +1,5 @@
+Mi volt István születési neve?;A) Pajk;B) Majk;C) Vajk;1;C
+Melyik vallást voltak hajlandók felvenni annak érdekében, hogy beilleszkedjenek Európa népei közé?;A) Hinduizmust;B) Judaizmust;C) Keresztény hitet;1;C
+Mikor került sor a magyar államalapításra?;A) 10. század;B) 11. század;C) 12. század;1;A
+Ki vezette az államalapítást?;A) Ferenc József császár;B) Szent István király;C) Mátyás király;1;B
+Hol zajlott a honfoglalás?;A) Erdélyben;B) Kárpát-medencében;C) Felvidéken;1;B

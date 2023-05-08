@@ -1,0 +1,1 @@
+Mivel irányítod a játékost?;A);B);C);1;A
