@@ -17,13 +17,15 @@ namespace FFTkTheTalesofTheHistoryExam
             //megjelenito.menuMegjelenites(0);
             Kviz kviz = new Kviz();
 
-            foreach (var item in kviz.pass())
-            {
-                foreach (var item2 in item)
-                {
-                    Console.WriteLine(item2);
-                }
-            }
+            //foreach (var item in kviz.beolvasas())
+            //{
+            //    foreach (var item2 in item)
+            //    {
+            //        Console.WriteLine(item2);
+            //    }
+            //}
+
+            Console.WriteLine(kviz.kvizTest());
 
 
 

@@ -12,7 +12,7 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
     {
         public Kviz()
         {
-            pass();
+            beolvasas();
         }
         private string kerdes;
         public string KerdesekFeltevese { get { return kerdes; } private set { kerdes = value; } }
@@ -26,9 +26,8 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
         private char megoldas;
         public char Megoldas { get { return megoldas; } private set { megoldas = value; } }
           
-        public List<string[]> pass()
+        public List<string[]> beolvasas()
         {
-            int OsszPontszam = 0;
 
             StreamReader sr = new StreamReader("kviz.txt", Encoding.Default);
            
@@ -46,8 +45,28 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
             sr.Close();
             return kerdesek;
 
-            //
-
         }
+
+        //Kvíz Test
+
+        public string kvizTest()
+        {
+            Kviz kivz = new Kviz();
+            List<string[]> nev = kivz.beolvasas();
+            for (int i = 0; i < nev.Count; i++)
+            {
+
+                KerdesekFeltevese = nev[i][0];
+                valaszok= new string[] { nev[i][1], nev[i][2], nev[i][3] };
+                Pontszam = int.Parse(nev[i][4]);
+                Megoldas = char.Parse(nev[i][5]);
+            }
+            return "Hello Világ!";
+        }
+
+       
+        
+
+
     }
 }
