@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFTkTheTalesofTheHistoryExam.kviz;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -16,8 +17,13 @@ namespace FFTkTheTalesofTheHistoryExam
             //megjelenito.menuMegjelenites(0);
             Kviz kviz = new Kviz();
 
-            Console.WriteLine(kviz.);
-
+            foreach (var item in kviz.pass())
+            {
+                foreach (var item2 in item)
+                {
+                    Console.WriteLine(item2);
+                }
+            }
 
 
 
