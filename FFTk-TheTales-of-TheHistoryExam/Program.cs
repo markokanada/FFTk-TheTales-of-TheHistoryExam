@@ -11,13 +11,15 @@ namespace FFTkTheTalesofTheHistoryExam
 
         public static void Main(string[] args)
         {
-            Megjelenites megjelenito = new Megjelenites();
+            //
+            //Megjelenites megjelenito = new Megjelenites();
             //megjelenito.palyaMegjelenites("pálya1");
             //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
             //megjelenito.menuMegjelenites(0);
-            Kviz kviz = new Kviz();
 
-            //foreach (var item in kviz.beolvasas())
+
+
+            //foreach (var item in kviz.beolvasas("kviz.txt"))
             //{
             //    foreach (var item2 in item)
             //    {
@@ -25,7 +27,12 @@ namespace FFTkTheTalesofTheHistoryExam
             //    }
             //}
 
-            Console.WriteLine(kviz.kvizTest());
+            /*Amikor meghívjuk a kvízt ezzel a módszerrel meg kell adni, hogy melyik pályának a kvízét szertnénk pl.: kviz_palyaneve.txt. 
+            Ebben a példában az alap (test) kvíz található. | Összesen egy tesztben 5 db kérdés található 
+            Jelen pillanatban mind a két helyen át kell írni. */
+
+            Kviz kviz = new Kviz("kviz.txt");
+            Console.WriteLine(kviz.kvizTest("kviz.txt"));
 
 
 

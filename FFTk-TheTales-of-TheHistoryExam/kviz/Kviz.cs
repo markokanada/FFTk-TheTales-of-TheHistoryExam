@@ -10,9 +10,9 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
 
     class Kviz : Ikerdes
     {
-        public Kviz()
+        public Kviz(string FajlNev)
         {
-            beolvasas();
+            beolvasas(FajlNev);
         }
         private string kerdes;
         public string KerdesekFeltevese { get { return kerdes; } private set { kerdes = value; } }
@@ -26,10 +26,13 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
         private char megoldas;
         public char Megoldas { get { return megoldas; } private set { megoldas = value; } }
           
-        public List<string[]> beolvasas()
+
+        //Beolvasás
+
+        public List<string[]> beolvasas(string FajlNev)
         {
 
-            StreamReader sr = new StreamReader("kviz.txt", Encoding.Default);
+            StreamReader sr = new StreamReader("kviz/"+FajlNev, Encoding.Default);
            
             List<string[]> kerdesek = new List<string[]>();
 
@@ -37,7 +40,7 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
             while (!sr.EndOfStream)
             {
                 string[] seged = sr.ReadLine().Split(';');
-                string[] sor = new string[] { seged[0], seged[1], seged[2], seged[3], seged[4], seged[5] };
+                string[] sor = new string[] { seged[0], seged[1], seged[2], seged[3], seged[4], seged[5]};
 
                 kerdesek.Add(sor);
             }
@@ -49,23 +52,55 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
 
         //Kvíz Test
 
-        public string kvizTest()
+        public string kvizTest(string FajlNev)
         {
-            Kviz kivz = new Kviz();
-            List<string[]> nev = kivz.beolvasas();
-            for (int i = 0; i < nev.Count; i++)
+            
+
+            Kviz kivz = new Kviz(FajlNev);
+            List<string[]> KvizAdatok = kivz.beolvasas(FajlNev);
+            for (int i = 0; i < KvizAdatok.Count; i++)
             {
 
-                KerdesekFeltevese = nev[i][0];
-                valaszok= new string[] { nev[i][1], nev[i][2], nev[i][3] };
-                Pontszam = int.Parse(nev[i][4]);
-                Megoldas = char.Parse(nev[i][5]);
+                KerdesekFeltevese = KvizAdatok[i][0];
+                valaszok= new string[] { KvizAdatok[i][1], KvizAdatok[i][2], KvizAdatok[i][3] };
+                Pontszam = int.Parse(KvizAdatok[i][4]);
+                Megoldas = char.Parse(KvizAdatok[i][5]);
             }
-            return "Hello Világ!";
+
+            int Osszpont = 0;
+            for (int i = 0; i < KvizAdatok.Count; i++)
+            {
+                Console.WriteLine(KvizAdatok[i][0]);
+                Console.WriteLine(KvizAdatok[i][1]);
+                Console.WriteLine(KvizAdatok[i][2]);
+                Console.WriteLine(KvizAdatok[i][3]);
+                Console.Write("Kérlek add meg a válaszod helyes betűjelét: ");
+                string valasz = Console.ReadLine().ToUpper();
+                if(valasz == KvizAdatok[i][5])
+                {
+                    Osszpont += 1;
+                }
+
+                Console.WriteLine();
+            }
+
+            if (Osszpont == 5)
+            {
+                Console.WriteLine("Gratulálunk! Minden válaszod helyes!");
+            }else if(Osszpont < 5 || Osszpont > 1)
+            {
+                Console.WriteLine("Még fejlődnöd kell. Nem érted el a max pontot.");
+            }
+            else
+            {
+                Console.WriteLine("Sajnos elvesztetted a játékokt. A pontszámod 0.");
+            }
+            return "Pontszámod: " + Osszpont;
+
         }
 
-       
-        
+
+
 
 
     }
