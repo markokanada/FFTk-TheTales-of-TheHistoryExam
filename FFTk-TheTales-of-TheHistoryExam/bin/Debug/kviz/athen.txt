@@ -1,0 +1,5 @@
+Mi görögül a város/városállam?;A) polisz;B) city;C) pálász;1;A
+Mi az Athén államformája?;A) diktatúra;B) császárság;C) demokrácia;1;C
+A zsarnokság után ki vezette be a reformokat?;A) Kleiszthenész;B) Szolón;C) Peiszisztratosz;1;A
+Mit vezettek be, hogy a jövőben ne legyen zsarnokság;A) ingyen pénzosztást;B) cserépszavazást;C) büntető törvényeket;1;B
+Ki a demokrácia megteremtője?;A) Kleiszthenész;B) Szolón;C) Peiszisztratosz;1;C

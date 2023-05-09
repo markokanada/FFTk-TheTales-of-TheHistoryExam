@@ -7,51 +7,108 @@ using System.IO;
 
 namespace FFTkTheTalesofTheHistoryExam.kviz
 {
+
     class Kviz : Ikerdes
     {
-        public Kviz()
+        public Kviz(string FajlNev)
         {
-            kerdes = KerdesekFeltevese;
+            beolvasas(FajlNev);
         }
-        private string kerdes;
-        public string KerdesekFeltevese { get { return kerdes; } private set { kerdes = value; } }
+        private string[] kerdes;
+        public string[] KerdesekFeltevese { get { return kerdes; } private set { kerdes = value; } }
 
-        public string[] Valaszok => throw new NotImplementedException();
+        private string[] valaszok;
+        public string[] Valaszok { get { return valaszok; } private set { valaszok = value; } }
 
-        public int Pontszam => throw new NotImplementedException();
+        private int pontszam;
+        public int Pontszam { get { return pontszam; } private set { pontszam = value; } }
 
-        public char Megoldas => throw new NotImplementedException();
+        private char megoldas;
+        public char Megoldas { get { return megoldas; } private set { megoldas = value; } }
+          
 
-        public void pass()
+        //Beolvasás
+
+        public List<string[]> beolvasas(string FajlNev)
         {
-            int OsszPontszam = 0;
 
-            StreamReader sr = new StreamReader("kviz.txt", Encoding.UTF8);
-            //Elsősor tartalmazza a kérdések számát. 
-            int kerdesekSzama = int.Parse(sr.ReadLine());
-            Ikerdes[] kerdesek = new Ikerdes[kerdesekSzama];
+            StreamReader sr = new StreamReader("kviz/"+FajlNev, Encoding.UTF8);
+           
+            List<string[]> kerdesek = new List<string[]>();
 
             //Kérdések adatai beolvasása 
-            int i = 0;
             while (!sr.EndOfStream)
             {
-                string[] sor = sr.ReadLine().Split(';');
-                KerdesekFeltevese = sor[0];
-                string[] valaszok = new string[] { sor[1], sor[2], sor[3] };
-                int pontszam = int.Parse(sor[4]);
-                char megoldas = char.Parse(sor[5]);
+                string[] seged = sr.ReadLine().Split(';');
+                string[] sor = new string[] { seged[0], seged[1], seged[2], seged[3], seged[4], seged[5]};
 
-                Ikerdes kerdesObjektum = new Kerdes(kerdes, valaszok, pontszam, megoldas);
-                kerdesek[i] = kerdesObjektum;
-                i++;
-           
+                kerdesek.Add(sor);
             }
 
             sr.Close();
+            return kerdesek;
 
-
-            //
-            
         }
+        private int pont;
+        //Kvíz Test
+        public int Pont()
+        {
+            
+            return pont;
+        }
+
+        private List<string> kerdesek = new List<string>();
+        public List<string> Kerdesek()
+        {
+
+            return kerdesek;
+        }
+
+        public string[] kvizTest(string FajlNev)
+        {
+            
+            //Kvíz
+            Kviz kivz = new Kviz(FajlNev);
+            List<string[]> KvizAdatok = kivz.beolvasas(FajlNev);
+            for (int i = 0; i < KvizAdatok.Count; i++)
+            {
+
+                kerdesek.Add(KvizAdatok[i][0]);
+                kerdesek.Add(KvizAdatok[i][1]);
+                kerdesek.Add(KvizAdatok[i][2]);
+                kerdesek.Add(KvizAdatok[i][3]);
+                kerdesek.Add(KvizAdatok[i][4]);
+                kerdesek.Add(KvizAdatok[i][5]);
+            }
+
+            for (int i = 0; i < KvizAdatok.Count; i++)
+            {
+                Console.WriteLine(KvizAdatok[i][0]);
+                Console.WriteLine(KvizAdatok[i][1]);
+                Console.WriteLine(KvizAdatok[i][2]);
+                Console.WriteLine(KvizAdatok[i][3]);
+                Console.Write("Kérlek add meg a válaszod helyes betűjelét: ");
+                string valasz = Console.ReadLine().ToUpper();
+                if(valasz == KvizAdatok[i][5])
+                {
+                    pont += 1;
+                    Pont();
+                }
+
+                Console.WriteLine();
+            }
+
+            //Megjelenítéshez 
+            
+
+            string[] megjelenites = new string[] { pont.ToString() };
+            return megjelenites;
+
+        }
+
+
+
+
+
     }
 }
