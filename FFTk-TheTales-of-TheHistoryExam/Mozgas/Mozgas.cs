@@ -208,7 +208,7 @@ namespace FFTkTheTalesofTheHistoryExam
                         //print player
                         if (i == jelenlegiY && j == jelenlegiX)
                         {
-                            //palya[jelenlegiY, jelenlegiX].Replace("X", " ");
+                            palya[jelenlegiY, jelenlegiX] = " ";
                             Console.BackgroundColor = ConsoleColor.Red;
                             Console.Write(Palya[jelenlegiY, jelenlegiX]);
                             Console.ResetColor();
