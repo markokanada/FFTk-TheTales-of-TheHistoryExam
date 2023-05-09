@@ -14,11 +14,9 @@ namespace FFTkTheTalesofTheHistoryExam
             //megjelenito.palyaMegjelenites("pálya1");
             //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
             //megjelenito.menuMegjelenites(0);
-            Kviz kviz = new Kviz();
+            Mozgas mozgas = new Mozgas();
 
-            Console.WriteLine(kviz.);
-
-
+            mozgas.MozgasAPalyan();
 
 
             Console.ReadKey();

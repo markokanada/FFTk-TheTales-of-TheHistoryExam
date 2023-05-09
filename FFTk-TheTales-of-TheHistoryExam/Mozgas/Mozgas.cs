@@ -11,7 +11,6 @@ namespace FFTkTheTalesofTheHistoryExam
     internal class Mozgas : IMozgas
     {
 
-        Megjelenites megjelenites = new Megjelenites();
 
         private string[,] palya;
 
@@ -23,7 +22,10 @@ namespace FFTkTheTalesofTheHistoryExam
             }
             private set
             {
-                palya = value;
+                if (value != null)
+                {
+                    palya = value;
+                }
             }
         }
 
@@ -51,9 +53,11 @@ namespace FFTkTheTalesofTheHistoryExam
         public Mozgas()
         {
             Palya = palyaBeolvasas("pálya1.txt");
+            jelenlegiY = 0;
+            jelenlegiX = 0;
         }
 
-        string[] NemLehetRalepni = new string[9] {"=>", "[", "]", "#", "!", "?", "X", "-", "*"};
+        string[] NemLehetRalepni = new string[] {"=", ">", "[", "]", "#", "!", "?", "X", "-", "*"};
 
 
         private int sebesseg;
@@ -80,21 +84,23 @@ namespace FFTkTheTalesofTheHistoryExam
         //jobb és bal
         public int minX { get; private set; }
         public int maxX { get; private set; }
+
+        private int jelenlegix;
         public int jelenlegiX
         {
             get 
             {
-                return jelenlegiX;
+                return jelenlegix;
             }
             private set 
             {
-                for (int i = 0; i < palya.GetLength(0); i++)
+                for (int i = 0; i < Palya.GetLength(0); i++)
                 {
-                    for (int j = 0; j < palya.GetLength(1); j++)
+                    for (int j = 0; j < Palya.GetLength(1); j++)
                     {
-                        if (palya[i, j] == "X" && palya[i, j - 1] != "[")
+                        if (Palya[i, j] == "X" && Palya[i, j - 1] != "[")
                         {
-                            jelenlegiX = i;
+                            jelenlegix = j;
                         }
                     }
                 }
@@ -104,21 +110,22 @@ namespace FFTkTheTalesofTheHistoryExam
         //fel és le
         public int minY { get; private set; }
         public int maxY { get; private set; }
+        private int jelenlegiy;
         public int jelenlegiY
         {
             get
             {
-                return jelenlegiY;
+                return jelenlegiy;
             }
             private set
             {
-                for (int i = 0; i < palya.GetLength(0); i++)
+                for (int i = 0; i < Palya.GetLength(0); i++)
                 {
-                    for (int j = 0; j < palya.GetLength(1); j++)
+                    for (int j = 0; j < Palya.GetLength(1); j++)
                     {
-                        if (palya[i, j] == "X" && palya[i, j-1] != "[")
+                        if (Palya[i, j] == "X" && Palya[i, j-1] != "[")
                         {
-                            jelenlegiY = j;
+                            jelenlegiy = i;
                         }
                     }
                 }
@@ -131,45 +138,49 @@ namespace FFTkTheTalesofTheHistoryExam
         public void Balra()
         {
 
-            if (NemLehetRalepni.Contains(palya[jelenlegiX - 1, jelenlegiY]) == false)
+            if (NemLehetRalepni.Contains(Palya[jelenlegiY, jelenlegiX - 1]) == false)
             {
-                if (jelenlegiX > minX && 1 > minX)
-                {
-                    jelenlegiX -= 1;
-                }
+                jelenlegix -= 1;
+                //if (jelenlegiX > minX && 1 > minX)
+                //{
+                //}
             }
            
         }
         public void Jobbra()
         {
-            if (NemLehetRalepni.Contains(palya[jelenlegiX + 1, jelenlegiY]) == false)
+            if (NemLehetRalepni.Contains(Palya[jelenlegiY, jelenlegiX + 1]) == false)
             {
-                if (jelenlegiX < maxX && 1 < maxX)
-                {
-                    jelenlegiX += 1;
-                }
+
+                jelenlegix += 1;
+                //if (jelenlegiX < maxX && 1 < maxX)
+                //{
+                    
+                //}
             }
 
         }
         public void Fel()
         {
-            if (NemLehetRalepni.Contains(palya[jelenlegiX, jelenlegiY - 1]) == false)
+            if (NemLehetRalepni.Contains(palya[jelenlegiY - 1, jelenlegiX]) == false)
             {
-                if (jelenlegiY > minY && 1 > minY)
-                {
-                    jelenlegiY -= 1;
-                }
+                jelenlegiy -= 1;
+                //if (jelenlegiY > minY && 1 > minY)
+                //{
+                    
+                //}
             }
 
         }
         public void Le()
         {
-            if(NemLehetRalepni.Contains(palya[jelenlegiX, jelenlegiY + 1]) == false)
+            if(NemLehetRalepni.Contains(palya[jelenlegiY + 1, jelenlegiX]) == false)
             {
-                if (jelenlegiY < maxY && 1 < maxY)
-                {
-                    jelenlegiY += 1;
-                }
+                jelenlegiy += 1;
+                //if (jelenlegiY < maxY && 1 < maxY)
+                //{
+                    
+                //}
             }
         }
 
@@ -182,5 +193,58 @@ namespace FFTkTheTalesofTheHistoryExam
         {
             return $"maxX -> {maxX}\nmaxY -> {maxY}\nminX -> {minX}\nmaxY -> {maxY}\njelenlegiX -> {jelenlegiX}\njelenlegiY -> {jelenlegiY}";
         }
+
+
+        public void MozgasAPalyan()
+        {
+            while (true)
+            {
+
+                for (int i = 0; i < Palya.GetLength(0); i++)
+                {
+                    for (int j = 0; j < Palya.GetLength(1); j++)
+                    {
+                        
+                        //print player
+                        if (i == jelenlegiY && j == jelenlegiX)
+                        {
+                            //palya[jelenlegiY, jelenlegiX].Replace("X", " ");
+                            Console.BackgroundColor = ConsoleColor.Red;
+                            Console.Write(Palya[jelenlegiY, jelenlegiX]);
+                            Console.ResetColor();
+                        }
+                        else
+                        {
+                            Console.Write(Palya[i, j]);
+                        }
+                        
+                    }
+                    Console.WriteLine();
+                }
+
+                ConsoleKeyInfo keyInfo;
+                keyInfo = Console.ReadKey();
+
+                if (keyInfo.Key == ConsoleKey.UpArrow)
+                {
+                    Fel();
+                }
+                else if (keyInfo.Key == ConsoleKey.DownArrow)
+                {
+                    Le();
+                }
+                else if (keyInfo.Key == ConsoleKey.RightArrow)
+                {
+                    Jobbra();
+                }
+                else if (keyInfo.Key == ConsoleKey.LeftArrow)
+                {
+                    Balra();
+                }
+
+                Console.Clear();
+            }
+        }
+
     }
 }
