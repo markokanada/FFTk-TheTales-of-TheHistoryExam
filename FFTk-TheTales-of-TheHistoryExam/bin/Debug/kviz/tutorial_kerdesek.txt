@@ -1,1 +1,1 @@
-Mivel irányítod a játékost?;A);B);C);1;A
+Mivel irányítod a játékost?;A) Nyilakkal;B) WASD;C) Egérrel;1;A

@@ -8,7 +8,7 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
 {
     interface Ikerdes
     {
-        string KerdesekFeltevese { get; }
+        string[] KerdesekFeltevese { get; }
         string[] Valaszok { get; }
         int Pontszam { get; }
         char Megoldas { get; }

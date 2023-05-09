@@ -14,8 +14,8 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
         {
             beolvasas(FajlNev);
         }
-        private string kerdes;
-        public string KerdesekFeltevese { get { return kerdes; } private set { kerdes = value; } }
+        private string[] kerdes;
+        public string[] KerdesekFeltevese { get { return kerdes; } private set { kerdes = value; } }
 
         private string[] valaszok;
         public string[] Valaszok { get { return valaszok; } private set { valaszok = value; } }
@@ -32,7 +32,7 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
         public List<string[]> beolvasas(string FajlNev)
         {
 
-            StreamReader sr = new StreamReader("kviz/"+FajlNev, Encoding.Default);
+            StreamReader sr = new StreamReader("kviz/"+FajlNev, Encoding.UTF8);
            
             List<string[]> kerdesek = new List<string[]>();
 
@@ -49,8 +49,20 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
             return kerdesek;
 
         }
-
+        private int pont;
         //Kvíz Test
+        public int Pont()
+        {
+            
+            return pont;
+        }
+
+        private List<string> kerdesek = new List<string>();
+        public List<string> Kerdesek()
+        {
+
+            return kerdesek;
+        }
 
         public string[] kvizTest(string FajlNev)
         {
@@ -61,13 +73,14 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
             for (int i = 0; i < KvizAdatok.Count; i++)
             {
 
-                KerdesekFeltevese = KvizAdatok[i][0];
-                valaszok= new string[] { KvizAdatok[i][1], KvizAdatok[i][2], KvizAdatok[i][3] };
-                Pontszam = int.Parse(KvizAdatok[i][4]);
-                Megoldas = char.Parse(KvizAdatok[i][5]);
+                kerdesek.Add(KvizAdatok[i][0]);
+                kerdesek.Add(KvizAdatok[i][1]);
+                kerdesek.Add(KvizAdatok[i][2]);
+                kerdesek.Add(KvizAdatok[i][3]);
+                kerdesek.Add(KvizAdatok[i][4]);
+                kerdesek.Add(KvizAdatok[i][5]);
             }
 
-            int Osszpont = 0;
             for (int i = 0; i < KvizAdatok.Count; i++)
             {
                 Console.WriteLine(KvizAdatok[i][0]);
@@ -78,15 +91,17 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
                 string valasz = Console.ReadLine().ToUpper();
                 if(valasz == KvizAdatok[i][5])
                 {
-                    Osszpont += 1;
+                    pont += 1;
+                    Pont();
                 }
 
                 Console.WriteLine();
             }
 
             //Megjelenítéshez 
-            string[] megjelenites = new string[] { Osszpont.ToString() };
+            
 
+            string[] megjelenites = new string[] { pont.ToString() };
             return megjelenites;
 
         }
