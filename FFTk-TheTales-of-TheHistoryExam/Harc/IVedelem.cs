@@ -8,7 +8,7 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     internal interface IVedelem :IHarc
     {
-        int VedelemMertek { get; set; }
-        void Vedes();
+        int VedelemMertek { get; }
+        bool Vedes();
     }
 }

@@ -8,7 +8,7 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     internal interface IGyogyulas : IHarc
     {
-        int GyogyulasMerteke { get; set; }
-        void Gyogyulas();
+        int GyogyulasMerteke { get; }
+        int Gyogyulas();
     }
 }

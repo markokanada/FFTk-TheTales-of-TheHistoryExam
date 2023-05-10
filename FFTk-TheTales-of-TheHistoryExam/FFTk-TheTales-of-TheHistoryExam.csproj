@@ -30,6 +30,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Harc\Ellenfel.cs" />
     <Compile Include="Harc\Harc.cs" />
     <Compile Include="Harc\IGyogyulas.cs" />
     <Compile Include="Harc\IHarc.cs" />

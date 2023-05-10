@@ -8,9 +8,9 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     internal interface ISebzes : IHarc
     {
-        int Pancel { get; set; }
-        int SebzesMertek { get; set; }
-        void Sebzes();
-        void Elpusztitas();
+        int Pancel { get;}
+        int SebzesMertek { get;}
+        bool Sebzes();
+        bool Elpusztitas();
     }
 }
