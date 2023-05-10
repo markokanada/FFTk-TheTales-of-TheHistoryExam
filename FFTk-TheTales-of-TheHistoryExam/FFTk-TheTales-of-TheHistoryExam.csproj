@@ -36,30 +36,30 @@
     <Compile Include="Harc\IHarc.cs" />
     <Compile Include="Harc\ISebzes.cs" />
     <Compile Include="Harc\IVedelem.cs" />
-    <Compile Include="IKezeles.cs" />
-    <Compile Include="IKommunikalas.cs" />
-    <Compile Include="IKuldetesek.cs" />
-    <Compile Include="IMegjelenit.cs" />
-    <Compile Include="IMegjelenites.cs" />
-    <Compile Include="IMozgas.cs" />
-    <Compile Include="ITerkep.cs" />
-    <Compile Include="Kommunikacio.cs" />
-    <Compile Include="Kuldetes.cs" />
+    <Compile Include="Kezeles\IKezeles.cs" />
+    <Compile Include="Kommunikacio\IKommunikalas.cs" />
+    <Compile Include="Kuldetes\IKuldetesek.cs" />
+    <Compile Include="Megjelenites\IMegjelenit.cs" />
+    <Compile Include="Megjelenites\IMegjelenites.cs" />
+    <Compile Include="Mozgas\IMozgas.cs" />
+    <Compile Include="Megjelenites\ITerkep.cs" />
+    <Compile Include="Kommunikacio\Kommunikacio.cs" />
+    <Compile Include="Kuldetes\Kuldetes.cs" />
     <Compile Include="kviz\Ikerdes.cs" />
     <Compile Include="kviz\Kviz.cs" />
-    <Compile Include="Megjelenites.cs" />
+    <Compile Include="Megjelenites\Megjelenites.cs" />
     <Compile Include="Mozgas\Mozgas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="IKezelesRovidebb.cs" />
-    <Compile Include="IKuldetes.cs" />
-    <Compile Include="IMegjelenitHosszabb.cs" />
-    <Compile Include="IRaktar.cs" />
-    <Compile Include="IIMozgas.cs" />
-    <Compile Include="IKommunikacio.cs" />
-    <Compile Include="IKKuldetes.cs" />
-    <Compile Include="IMMozgas.cs" />
-    <Compile Include="Raktar.cs" />
+    <Compile Include="Kezeles\IKezelesRovidebb.cs" />
+    <Compile Include="Kuldetes\IKuldetes.cs" />
+    <Compile Include="Megjelenites\IMegjelenitHosszabb.cs" />
+    <Compile Include="Raktar\IRaktar.cs" />
+    <Compile Include="Mozgas\IIMozgas.cs" />
+    <Compile Include="Kommunikacio\IKommunikacio.cs" />
+    <Compile Include="Kuldetes\IKKuldetes.cs" />
+    <Compile Include="Mozgas\IMMozgas.cs" />
+    <Compile Include="Raktar\Raktar.cs" />
     <Compile Include="Szoba\ISzoba.cs" />
     <Compile Include="Szoba\ISzobaFactory.cs" />
     <Compile Include="Szoba\SzobaFactory.cs" />
@@ -93,10 +93,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Kommunikacio\" />
-    <Folder Include="Kuldetes\" />
-    <Folder Include="Raktar\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -222,24 +222,32 @@ namespace FFTkTheTalesofTheHistoryExam
                     Console.WriteLine();
                 }
 
-                ConsoleKeyInfo keyInfo;
-                keyInfo = Console.ReadKey();
+                bool ok = false;
+                while (ok != true)
+                {
+                    ConsoleKeyInfo keyInfo;
+                    keyInfo = Console.ReadKey();
 
-                if (keyInfo.Key == ConsoleKey.UpArrow)
-                {
-                    Fel();
-                }
-                else if (keyInfo.Key == ConsoleKey.DownArrow)
-                {
-                    Le();
-                }
-                else if (keyInfo.Key == ConsoleKey.RightArrow)
-                {
-                    Jobbra();
-                }
-                else if (keyInfo.Key == ConsoleKey.LeftArrow)
-                {
-                    Balra();
+                    if (keyInfo.Key == ConsoleKey.UpArrow && NemLehetRalepni.Contains(palya[jelenlegiY - 1, jelenlegiX]) == false)
+                    {
+                        Fel();
+                        ok = true;
+                    }
+                    else if (keyInfo.Key == ConsoleKey.DownArrow && NemLehetRalepni.Contains(palya[jelenlegiY + 1, jelenlegiX]) == false)
+                    {
+                        Le();
+                        ok = true;
+                    }
+                    else if (keyInfo.Key == ConsoleKey.RightArrow && NemLehetRalepni.Contains(palya[jelenlegiY, jelenlegiX + 1]) == false)
+                    {
+                        Jobbra();
+                        ok = true;
+                    }
+                    else if (keyInfo.Key == ConsoleKey.LeftArrow && NemLehetRalepni.Contains(palya[jelenlegiY, jelenlegiX - 1]) == false)
+                    {
+                        Balra();
+                        ok = true;
+                    }
                 }
 
                 Console.Clear();
