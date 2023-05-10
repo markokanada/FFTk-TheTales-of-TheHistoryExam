@@ -10,28 +10,19 @@ namespace FFTkTheTalesofTheHistoryExam
 
         public static void Main(string[] args)
         {
-            Megjelenites megjelenito = new Megjelenites();
             //megjelenito.palyaMegjelenites("pálya1");
             //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
-            //megjelenito.menuMegjelenites(0);
-            //Mozgas mozgas = new Mozgas();
 
+            //Megjelenites megjelenito = new Megjelenites();
+            //megjelenito.menuMegjelenites(0);
+
+            //Mozgas mozgas = new Mozgas();
             //mozgas.MozgasAPalyan();
 
-            Harc player = new Harc
-            {
-                Elet = 100,
-                SebzesMertek = 10,
-                VedelemMertek = 5
-            };
-            Ellenfel enemy = new Ellenfel
-            {
-                Elet = 80,
-                SebzesMertek = 8,
-                VedelemMertek = 3
-            };
+            Harc player = new Harc();
+            Ellenfel enemy = new Ellenfel();
 
-            player.Fight(enemy);
+            player.Harcolas(enemy);
 
 
             Console.ReadKey();
