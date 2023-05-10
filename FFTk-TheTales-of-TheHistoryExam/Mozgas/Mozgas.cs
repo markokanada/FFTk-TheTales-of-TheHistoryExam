@@ -199,6 +199,7 @@ namespace FFTkTheTalesofTheHistoryExam
         {
             while (true)
             {
+                Console.CursorVisible = false;
 
                 for (int i = 0; i < Palya.GetLength(0); i++)
                 {
@@ -210,7 +211,7 @@ namespace FFTkTheTalesofTheHistoryExam
                         {
                             palya[jelenlegiY, jelenlegiX] = " ";
                             Console.BackgroundColor = ConsoleColor.Red;
-                            Console.Write(Palya[jelenlegiY, jelenlegiX]);
+                            Console.Write("X");
                             Console.ResetColor();
                         }
                         else
@@ -222,32 +223,25 @@ namespace FFTkTheTalesofTheHistoryExam
                     Console.WriteLine();
                 }
 
-                bool ok = false;
-                while (ok != true)
-                {
-                    ConsoleKeyInfo keyInfo;
-                    keyInfo = Console.ReadKey();
+                    
+                ConsoleKeyInfo keyInfo;
+                keyInfo = Console.ReadKey();
 
-                    if (keyInfo.Key == ConsoleKey.UpArrow && NemLehetRalepni.Contains(palya[jelenlegiY - 1, jelenlegiX]) == false)
-                    {
-                        Fel();
-                        ok = true;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.DownArrow && NemLehetRalepni.Contains(palya[jelenlegiY + 1, jelenlegiX]) == false)
-                    {
-                        Le();
-                        ok = true;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.RightArrow && NemLehetRalepni.Contains(palya[jelenlegiY, jelenlegiX + 1]) == false)
-                    {
-                        Jobbra();
-                        ok = true;
-                    }
-                    else if (keyInfo.Key == ConsoleKey.LeftArrow && NemLehetRalepni.Contains(palya[jelenlegiY, jelenlegiX - 1]) == false)
-                    {
-                        Balra();
-                        ok = true;
-                    }
+                if (keyInfo.Key == ConsoleKey.UpArrow && NemLehetRalepni.Contains(palya[jelenlegiY - 1, jelenlegiX]) == false)
+                {
+                    Fel();
+                }
+                else if (keyInfo.Key == ConsoleKey.DownArrow && NemLehetRalepni.Contains(palya[jelenlegiY + 1, jelenlegiX]) == false)
+                {
+                    Le();
+                }
+                else if (keyInfo.Key == ConsoleKey.RightArrow && NemLehetRalepni.Contains(palya[jelenlegiY, jelenlegiX + 1]) == false)
+                {
+                    Jobbra();
+                }
+                else if (keyInfo.Key == ConsoleKey.LeftArrow && NemLehetRalepni.Contains(palya[jelenlegiY, jelenlegiX - 1]) == false)
+                {
+                    Balra();
                 }
 
                 Console.Clear();
