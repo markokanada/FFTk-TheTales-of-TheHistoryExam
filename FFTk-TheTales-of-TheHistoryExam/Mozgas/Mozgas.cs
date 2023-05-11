@@ -12,6 +12,20 @@ namespace FFTkTheTalesofTheHistoryExam
     {
 
 
+        private int PalyaIndex = 1;
+
+        public int PalyaIndexNoveles()
+        {
+            PalyaIndex++;
+            return PalyaIndex;
+        }
+
+        public int PalyaIndexCsokkentes()
+        {
+            PalyaIndex--;
+            return PalyaIndex;
+        }
+
         private string[,] palya;
 
         public string[,] Palya
@@ -52,7 +66,7 @@ namespace FFTkTheTalesofTheHistoryExam
 
         public Mozgas()
         {
-            Palya = palyaBeolvasas("pálya1.txt");
+            Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
             jelenlegiY = 0;
             jelenlegiX = 0;
         }
@@ -82,9 +96,6 @@ namespace FFTkTheTalesofTheHistoryExam
 
 
         //jobb és bal
-        public int minX { get; private set; }
-        public int maxX { get; private set; }
-
         private int jelenlegix;
         public int jelenlegiX
         {
@@ -108,8 +119,6 @@ namespace FFTkTheTalesofTheHistoryExam
         }
 
         //fel és le
-        public int minY { get; private set; }
-        public int maxY { get; private set; }
         private int jelenlegiy;
         public int jelenlegiY
         {
@@ -132,7 +141,41 @@ namespace FFTkTheTalesofTheHistoryExam
             }
         }
 
+        public int jelenlegiyy()
+        {
+            int y = 0;
 
+            for (int i = 0; i < Palya.GetLength(0); i++)
+            {
+                for (int j = 0; j < Palya.GetLength(1); j++)
+                {
+                    if (Palya[i, j] == "X" && Palya[i, j - 1] != "[")
+                    {
+                        y = i;
+                    }
+                }
+            }
+
+            return y;
+        }
+
+        public int jelenlegixx()
+        {
+            int x = 0;
+
+            for (int i = 0; i < Palya.GetLength(0); i++)
+            {
+                for (int j = 0; j < Palya.GetLength(1); j++)
+                {
+                    if (Palya[i, j] == "X" && Palya[i, j - 1] != "[")
+                    {
+                        x = j;
+                    }
+                }
+            }
+
+            return x;
+        }
 
 
         public void Balra()
@@ -189,16 +232,55 @@ namespace FFTkTheTalesofTheHistoryExam
             Sebesseg += mertek;
         }
 
-        public string Adatok()
+        //X és Y koordináta tömb, ha null, akkor nincs ajtó
+        public int[] FentiAjto()
         {
-            return $"maxX -> {maxX}\nmaxY -> {maxY}\nminX -> {minX}\nmaxY -> {maxY}\njelenlegiX -> {jelenlegiX}\njelenlegiY -> {jelenlegiY}";
+            int[] fentiAjtoYX = new int[2];
+
+            for (int i = 0; i < Palya.GetLength(0); i++)
+            {
+                for (int j = 0; j < Palya.GetLength(1); j++)
+                {
+                    if (Palya[i, j] == "A" && Palya[i, j - 1] == "[" && Palya[i ,j + 1] == "]" && i < 10)
+                    {
+                        fentiAjtoYX[0] = i;
+                        fentiAjtoYX[1] = j;
+                    }
+                }
+            }
+
+            return fentiAjtoYX;
         }
 
+        public int[] LentiAjto()
+        {
+            int[] lentiAjtoXY = new int[2];
 
+            for (int i = 0; i < Palya.GetLength(0); i++)
+            {
+                for (int j = 0; j < Palya.GetLength(1); j++)
+                {
+                    if (Palya[i, j] == "A" && Palya[i, j - 1] == "[" && Palya[i, j + 1] == "]" && i > 10)
+                    {
+                        lentiAjtoXY[0] = i;
+                        lentiAjtoXY[1] = j;
+                        
+                    }
+                }
+            }
+
+            return lentiAjtoXY;
+        }
+
+        
         public void MozgasAPalyan()
         {
-            while (true)
+
+            bool playing = true;
+            while (playing)
             {
+                int[] lentiAjtoYX = LentiAjto();
+                int[] fentiAjtoYX = FentiAjto();
                 Console.CursorVisible = false;
 
                 for (int i = 0; i < Palya.GetLength(0); i++)
@@ -209,7 +291,7 @@ namespace FFTkTheTalesofTheHistoryExam
                         //print player
                         if (i == jelenlegiY && j == jelenlegiX)
                         {
-                            palya[jelenlegiY, jelenlegiX] = " ";
+                            Palya[jelenlegiY, jelenlegiX] = " ";
                             Console.BackgroundColor = ConsoleColor.Red;
                             Console.Write("X");
                             Console.ResetColor();
@@ -218,12 +300,19 @@ namespace FFTkTheTalesofTheHistoryExam
                         {
                             Console.Write(Palya[i, j]);
                         }
-                        
+
                     }
                     Console.WriteLine();
                 }
 
-                    
+                
+
+
+
+                Console.WriteLine(jelenlegiY);
+                Console.WriteLine(jelenlegiX);
+                Console.WriteLine(PalyaIndex);
+
                 ConsoleKeyInfo keyInfo;
                 keyInfo = Console.ReadKey();
 
@@ -243,9 +332,44 @@ namespace FFTkTheTalesofTheHistoryExam
                 {
                     Balra();
                 }
+                //kilépés
+                else if (keyInfo.Key == ConsoleKey.Escape)
+                {
+                    playing = false;
+                }
+
+
+
+
+                if (lentiAjtoYX.Length != 0)
+                {
+                    if (jelenlegiY == lentiAjtoYX[0] && jelenlegiX == lentiAjtoYX[1])
+                    {
+                        PalyaIndex = PalyaIndexNoveles();
+                        Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
+                        jelenlegiY = jelenlegiyy();
+                        jelenlegiX = jelenlegixx();
+
+
+                    }
+                }
+                if (fentiAjtoYX.Length != 0)
+                {
+                    if (jelenlegiY == fentiAjtoYX[0] && jelenlegiX == fentiAjtoYX[1])
+                    {
+                        PalyaIndex = PalyaIndexCsokkentes();
+                        Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
+                        jelenlegiY = jelenlegiyy();
+                        jelenlegiX = jelenlegixx();
+
+                    }
+                }
+
+
 
                 Console.Clear();
             }
+            
         }
 
     }

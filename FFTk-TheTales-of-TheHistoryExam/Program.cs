@@ -17,6 +17,7 @@ namespace FFTkTheTalesofTheHistoryExam
             //megjelenito.menuMegjelenites(0);
 
             Mozgas mozgas = new Mozgas();
+
             mozgas.MozgasAPalyan();
 
             //Harc player = new Harc();
