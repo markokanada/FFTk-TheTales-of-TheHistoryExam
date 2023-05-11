@@ -141,43 +141,6 @@ namespace FFTkTheTalesofTheHistoryExam
             }
         }
 
-        public int jelenlegiyy()
-        {
-            int y = 0;
-
-            for (int i = 0; i < Palya.GetLength(0); i++)
-            {
-                for (int j = 0; j < Palya.GetLength(1); j++)
-                {
-                    if (Palya[i, j] == "X" && Palya[i, j - 1] != "[")
-                    {
-                        y = i;
-                    }
-                }
-            }
-
-            return y;
-        }
-
-        public int jelenlegixx()
-        {
-            int x = 0;
-
-            for (int i = 0; i < Palya.GetLength(0); i++)
-            {
-                for (int j = 0; j < Palya.GetLength(1); j++)
-                {
-                    if (Palya[i, j] == "X" && Palya[i, j - 1] != "[")
-                    {
-                        x = j;
-                    }
-                }
-            }
-
-            return x;
-        }
-
-
         public void Balra()
         {
 
@@ -347,8 +310,8 @@ namespace FFTkTheTalesofTheHistoryExam
                     {
                         PalyaIndex = PalyaIndexNoveles();
                         Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
-                        jelenlegiY = jelenlegiyy();
-                        jelenlegiX = jelenlegixx();
+                        jelenlegiY = 0;
+                        jelenlegiX = 0;
 
 
                     }
@@ -359,8 +322,8 @@ namespace FFTkTheTalesofTheHistoryExam
                     {
                         PalyaIndex = PalyaIndexCsokkentes();
                         Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
-                        jelenlegiY = jelenlegiyy();
-                        jelenlegiX = jelenlegixx();
+                        jelenlegiY = 0;
+                        jelenlegiX = 0;
 
                     }
                 }
