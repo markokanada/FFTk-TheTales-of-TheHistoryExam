@@ -10,13 +10,23 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     internal class Harc : ISebzes, IGyogyulas, IVedelem
     {
+        private int pont;
+        public int Pont
+        {
+            get { return pont; }
+            private set { pont = value; }
+        }
+
         public Harc()
         {
             Random random = new Random();
 
             Elet = 100;
-            SebzesMertek = random.Next(15, 21);
-            VedelemMertek = random.Next(1, 6);
+            SebzesMertek = random.Next(10, 16);
+            VedelemMertek = random.Next(1, 11);
+            Pont = 0;
+            //GyogyulasMerteke = 20;
+            Pancel = 50;
         }
 
         private int elet;
@@ -41,34 +51,106 @@ namespace FFTkTheTalesofTheHistoryExam
 
         public void Harcolas(Ellenfel ellenfel)
         {
-            Console.WriteLine("-----A harc elkezdődik!-----\n\n");
+            Console.WriteLine("\t-----A harc elkezdődik!-----\n\n");
 
 
             while (Elet > 0 && ellenfel.Elet > 0)
             {
-
                 Thread.Sleep(1000);
                 //player támad
                 if (Elet > 0)
                 {
-                    int dmg = SebzesMertek - ellenfel.VedelemMertek;
-                    ellenfel.Elet -= dmg;
-                    Console.WriteLine("Te támadsz !");
-                    Console.WriteLine("Hátralévő ellenfél életerő -> " + ellenfel.Elet);
-                    Console.WriteLine();
+                    if (Sebzes(ellenfel))
+                    {
+                        int dmg = SebzesMertek - ellenfel.VedelemMertek;
+                        Console.WriteLine("\t***\tTe támadsz !\t***");
+                        Console.WriteLine($"\n\t\tTámadás:  {dmg}dmg");
+
+                        if (ellenfel.Pancel > 0)
+                        {
+                            if (dmg > ellenfel.Pancel)
+                            {
+                                dmg -= ellenfel.Pancel;
+                                ellenfel.Pancel = 0;
+                                ellenfel.Elet -= dmg;
+                                Console.WriteLine($" \n\t\tEllenfél: {ellenfel.Pancel} armor");
+                                Console.WriteLine($" \n\t\tEllenfél: {ellenfel.Elet} hp");
+                            }
+                            else
+                            {
+                                ellenfel.Pancel -= dmg;
+                                Console.WriteLine($" \n\t\tEllenfél: {ellenfel.Pancel} armor");
+                                Console.WriteLine($" \n\t\tEllenfél: {ellenfel.Elet} hp");
+                            }
+
+                        }
+                        else
+                        {
+                            ellenfel.Elet -= dmg;
+                            Console.WriteLine($" \n\t\tEllenfél: {ellenfel.Pancel} armor");
+                            Console.WriteLine($" \n\t\tEllenfél: {ellenfel.Elet} hp");
+                        }
+                        
+                        
+                        
+                        
+                        
+                        Console.WriteLine();
+                    }
+                    else
+                    {
+                        Console.WriteLine("\t***\tA támadásod sikertelen volt !\t***\n");
+                    }
+                    
                 }
 
-                Thread.Sleep(1000);
+                //Thread.Sleep(1000);
 
                 //enemy támad
 
                 if (ellenfel.Elet > 0)
                 {
-                    int dmg = ellenfel.SebzesMertek - VedelemMertek;
-                    Elet -= dmg;
-                    Console.WriteLine("Az ellenfél támad !");
-                    Console.WriteLine("Hátralévő életerő -> " + Elet);
-                    Console.WriteLine();
+                    if (ellenfel.Sebzes())
+                    {
+                        int dmg = ellenfel.SebzesMertek - VedelemMertek;
+                        Console.WriteLine("\t***\tAz ellenfél támad !\t***");
+                        Console.WriteLine($"\n\t\tTámadás:  {dmg}dmg");
+
+                        if (Pancel > 0)
+                        {
+                            if (dmg > Pancel)
+                            {
+                                dmg -= Pancel;
+                                Pancel = 0;
+                                Elet -= dmg;
+                                Console.WriteLine($" \n\t\tTe: {Pancel} armor");
+                                Console.WriteLine($"\n\t\tTe: {Elet} hp");
+                            }
+                            else
+                            {
+                                Pancel -= dmg;
+                                Console.WriteLine($" \n\t\tTe: {Pancel} armor");
+                                Console.WriteLine($"\n\t\tTe: {Elet} hp");
+                            }
+
+
+                        }
+                        else
+                        {
+                            Elet -= dmg;
+                            Console.WriteLine($" \n\t\tTe: {Pancel} armor");
+                            Console.WriteLine($"\n\t\tTe: {Elet} hp");
+                        }
+
+                        
+                        
+                        Console.WriteLine();
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("\t***\tAz ellenfél támadása sikertelen volt !\t***\n");
+                    }
 
                 }
 
@@ -76,43 +158,46 @@ namespace FFTkTheTalesofTheHistoryExam
 
             if (Elet > 0)
             {
-                Console.WriteLine("Nyertél!");
+                Console.Write("\t\t");
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.Write("Nyertél!");
+                Console.ResetColor();
+                Console.WriteLine();
+                Pont += 1;
             }
             else
             {
-                Console.WriteLine("Vesztettél!");
+                Console.Write("\t\t");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.Write("Vesztettél!");
+                Console.ResetColor();
+                Console.WriteLine();
             }
         }
 
-
+        private int pancel;
         public int Pancel
         {
-            get { return Pancel; }
+            get { return pancel; }
             private set
             {
-                if (value > 0 && value <= 100)
-                {
-                    Pancel = value;
-                }
-                else
-                {
-                    Pancel = 50;
-                }
+                pancel = value;
             }
         }
 
+        private int gyogyulasMerteke;
         public int GyogyulasMerteke
         {
-            get { return GyogyulasMerteke; }
+            get { return gyogyulasMerteke; }
             private set
             {
                 if (value > 0 && value <= 40)
                 {
-                    GyogyulasMerteke = value;
+                    gyogyulasMerteke = value;
                 }
                 else
                 {
-                    GyogyulasMerteke = 20;
+                    gyogyulasMerteke = 20;
                 }
             }
         }
@@ -120,24 +205,50 @@ namespace FFTkTheTalesofTheHistoryExam
 
 
 
-        public bool Elpusztitas() //sikeres vagy nem
+        public bool Elpusztitas(Ellenfel ellenfel) //sikeres vagy nem
         {
-            throw new NotImplementedException();
+            if (ellenfel.Elet <= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public int Gyogyulas() //gyógyulás mértéke
         {
-            throw new NotImplementedException();
+            Elet += GyogyulasMerteke;
+            return GyogyulasMerteke;
         }
 
-        public bool Sebzes() //sikeres vagy nem
+        public bool Sebzes(Ellenfel ellenfel) //sikeres vagy nem
         {
-            throw new NotImplementedException();
+            if (ellenfel.Vedes())
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public bool Vedes() //sikeres vagy nem
         {
-            throw new NotImplementedException();
+            Random random = new Random();
+
+            int veletlenszam = random.Next(1, 10 + 1);
+            Console.WriteLine(veletlenszam);
+            if ( veletlenszam == 5)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

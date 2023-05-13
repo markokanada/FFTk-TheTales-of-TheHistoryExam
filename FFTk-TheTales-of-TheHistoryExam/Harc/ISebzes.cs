@@ -10,7 +10,7 @@ namespace FFTkTheTalesofTheHistoryExam
     {
         int Pancel { get;}
         int SebzesMertek { get;}
-        bool Sebzes();
-        bool Elpusztitas();
+        bool Sebzes(Ellenfel ellenfel);
+        bool Elpusztitas(Ellenfel ellenfel);
     }
 }

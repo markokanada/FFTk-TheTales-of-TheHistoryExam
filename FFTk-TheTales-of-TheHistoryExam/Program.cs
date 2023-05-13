@@ -16,14 +16,17 @@ namespace FFTkTheTalesofTheHistoryExam
             //Megjelenites megjelenito = new Megjelenites();
             //megjelenito.menuMegjelenites(0);
 
-            Mozgas mozgas = new Mozgas();
+            //Mozgas mozgas = new Mozgas();
 
-            mozgas.MozgasAPalyan();
+            //mozgas.MozgasAPalyan();
 
-            //Harc player = new Harc();
-            //Ellenfel enemy = new Ellenfel();
+            Harc player = new Harc();
+            Ellenfel enemy = new Ellenfel();
+            Ellenfel enemy2 = new Ellenfel();
 
-            //player.Harcolas(enemy);
+            player.Harcolas(enemy);
+            player.Harcolas(enemy2);
+
 
 
             Console.ReadKey();
