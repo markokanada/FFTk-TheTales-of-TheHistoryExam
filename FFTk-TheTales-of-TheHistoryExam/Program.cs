@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFTkTheTalesofTheHistoryExam.Szoba;
+using System;
 using System.IO;
 using System.Text;
 using System.Windows;
@@ -21,11 +22,17 @@ namespace FFTkTheTalesofTheHistoryExam
             //mozgas.MozgasAPalyan();
 
             Harc player = new Harc();
-            Ellenfel enemy = new Ellenfel();
-            Ellenfel enemy2 = new Ellenfel();
+            SzobaFactory szoba = new SzobaFactory();
+            Mentes mentes = new Mentes();
+            Raktar raktar = new Raktar(5);
+            raktar.TargyHozzadas("alma");
+            raktar.TargyHozzadas("kés");
+            raktar.TargyHozzadas("kulcs");
+            raktar.TargyHozzadas("kenyér");
+            raktar.TargyHozzadas("víz");
 
-            player.Harcolas(enemy);
-            player.Harcolas(enemy2);
+            Console.WriteLine(mentes.JatekMentes(raktar, player, szoba));
+            Console.WriteLine(mentes.MentesTorles());
 
 
 

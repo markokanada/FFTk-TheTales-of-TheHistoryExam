@@ -36,11 +36,13 @@
     <Compile Include="Harc\IHarc.cs" />
     <Compile Include="Harc\ISebzes.cs" />
     <Compile Include="Harc\IVedelem.cs" />
+    <Compile Include="IMentes.cs" />
     <Compile Include="Kezeles\IKezeles.cs" />
     <Compile Include="Kommunikacio\IKommunikalas.cs" />
     <Compile Include="Kuldetes\IKuldetesek.cs" />
     <Compile Include="Megjelenites\IMegjelenit.cs" />
     <Compile Include="Megjelenites\IMegjelenites.cs" />
+    <Compile Include="Mentes.cs" />
     <Compile Include="Mozgas\IMozgas.cs" />
     <Compile Include="Megjelenites\ITerkep.cs" />
     <Compile Include="Kommunikacio\Kommunikacio.cs" />

@@ -1,0 +1,8 @@
+﻿RaktarMeret:5
+Raktar:alma;kés;kulcs;kenyér;víz
+Elet:100
+Pont:0
+SebzesMertek:13
+VedelemMertek:7
+Pancel:50
+SzobaId:0
