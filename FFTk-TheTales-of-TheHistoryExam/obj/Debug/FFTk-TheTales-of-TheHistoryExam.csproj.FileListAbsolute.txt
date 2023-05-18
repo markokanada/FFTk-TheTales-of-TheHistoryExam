@@ -14,7 +14,6 @@ D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHis
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand.txt
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.exe
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
-D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\pálya1.txt
 D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\brand2.txt
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.AssemblyReference.cache
 E:\neumann\11.o\ikt\projektek\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.SuggestedBindingRedirects.cache
@@ -54,3 +53,4 @@ d:\1.Bacsa Dániel\IKT projekt\1. FFTK The Tales of The History Exam\FFTk-TheTal
 d:\1.Bacsa Dániel\IKT projekt\1. FFTK The Tales of The History Exam\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.csproj.CoreCompileInputs.cache
 d:\1.Bacsa Dániel\IKT projekt\1. FFTK The Tales of The History Exam\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.exe
 d:\1.Bacsa Dániel\IKT projekt\1. FFTK The Tales of The History Exam\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\obj\Debug\FFTk-TheTales-of-TheHistoryExam.pdb
+D:\School\Sea_Shark\fftk\FFTk-TheTales-of-TheHistoryExam\FFTk-TheTales-of-TheHistoryExam\bin\Debug\pálya1.txt

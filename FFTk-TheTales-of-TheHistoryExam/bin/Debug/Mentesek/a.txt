@@ -3,6 +3,6 @@ Raktar:;;;;
 Elet:100
 Pont:0
 SebzesMertek:12
-VedelemMertek:2
+VedelemMertek:10
 Pancel:50
 SzobaId:0

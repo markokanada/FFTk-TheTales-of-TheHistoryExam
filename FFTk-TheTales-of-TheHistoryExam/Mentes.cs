@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
-    internal class Mentes : IMentes
+    internal class Mentes
     {
 
-        public bool JatekMentes(Raktar raktar, Harc jatekos, SzobaFactory szoba)
+        public void JatekMentes(Raktar raktar, Harc jatekos, SzobaFactory szoba,int type) //0: betöltés, 1: létrehozás
         {
             DirectoryInfo mentesiFajlok = new DirectoryInfo("Mentesek/");
-
+            Megjelenites megjelenito = new Megjelenites();
             // Mappa tartalmának lekérése
             FileInfo[] fajlok = mentesiFajlok.GetFiles();
-
+            if(type == 0) { 
             if (fajlok.Length == 0)
             {
                 Console.WriteLine("Még nincsen egy mentésed sem");
@@ -25,16 +25,37 @@ namespace FFTkTheTalesofTheHistoryExam
             else
             {
                 // Fájlok kiíratása
-                Console.WriteLine("Eddigi mentéseid: ");
+                Console.WriteLine("Legutóbbi 3 mentésed: ");
                 int fajlIndex = 1;
+                int counter = 0;
                 foreach (FileInfo fajl in fajlok)
                 {
+                    if (counter < 3) { 
                     Console.WriteLine($"{fajlIndex} - {fajl}");
                     fajlIndex++;
+                        counter++;
+                    }
                 }
-            }
-           
+                Console.Write("\n");
 
+                megjelenito.GombMegjelenites("[ESC] Visszalépés", 0, 1);
+                bool keyPressed = false;
+
+                ConsoleKeyInfo keyInfo2;
+                do
+                {
+                    keyInfo2 = Console.ReadKey();
+                    if (keyInfo2.Key == ConsoleKey.E)
+                    {
+                        keyPressed = true;
+                        megjelenito.menuMegjelenites(2);
+
+                    }
+                } while (keyInfo2.Key != ConsoleKey.Escape && !keyPressed);
+                    //return true;
+        }
+            }
+            if(type == 1) { 
             Console.Write("Add meg a mentés nevét: ");
             string mentesNev = Console.ReadLine();
 
@@ -49,11 +70,11 @@ namespace FFTkTheTalesofTheHistoryExam
 
                         if (dontes == "I")
                         {
-                            break;
-                        }
+                                megjelenito.palyaMegjelenites("pálya1");
+                            }
                         else
                         {
-                            return false;
+                            //return false;
                         }
                     }
                 }
@@ -72,17 +93,18 @@ namespace FFTkTheTalesofTheHistoryExam
 
                 sw.WriteLine(menteniValoDolgok);
                 sw.Close();
-                return true;
+                    megjelenito.palyaMegjelenites("pálya1");
 
 
-            }
+                }
             else
             {
-                return false;
+                //return false;
             }
             
         }
-
+            //return true;
+        }
         public bool MentesTorles()
         {
             DirectoryInfo mentesiFajlok = new DirectoryInfo("Mentesek/");

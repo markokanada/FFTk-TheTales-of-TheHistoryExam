@@ -2,7 +2,7 @@
 Raktar:;;;;
 Elet:100
 Pont:0
-SebzesMertek:12
+SebzesMertek:11
 VedelemMertek:2
 Pancel:50
 SzobaId:0

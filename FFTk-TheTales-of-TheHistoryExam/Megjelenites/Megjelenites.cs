@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FFTkTheTalesofTheHistoryExam.Szoba;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
@@ -14,6 +15,11 @@ namespace FFTkTheTalesofTheHistoryExam
         public int h = Console.WindowHeight;
         public void palyaMegjelenites(string palyanev)
         {
+            Mozgas mozgas = new Mozgas();
+
+            mozgas.MozgasAPalyan();
+
+            Harc player = new Harc();
             string filename = $"{palyanev}.txt";
 
             if (File.Exists($"{filename}"))
@@ -402,11 +408,24 @@ namespace FFTkTheTalesofTheHistoryExam
                     }
                     else if (keyInfo.Key == ConsoleKey.Enter)
                     {
+                        Harc player = new Harc();
+                        SzobaFactory szoba = new SzobaFactory();
+                        Mentes mentes = new Mentes();
+                        Raktar raktar = new Raktar(5);
+
                         Console.Clear();
-                        Console.WriteLine("A(z) " + menuItems[selectedIndex] + " opció lett kiválasztva.");
-                        Console.ReadKey();
-                        if (menuItems[selectedIndex] == "Kilépés")
+                        //Console.WriteLine("A(z) " + menuItems[selectedIndex] + " opció lett kiválasztva.");
+                        //Console.ReadKey();
+                        if (menuItems[selectedIndex] == "Mentés betöltése")
                         {
+                            mentes.JatekMentes(raktar, player, szoba, 0);
+                        }
+
+                        if (menuItems[selectedIndex] == "Új játék kezdése")
+                        {
+                            //mentes.JatekMentes(raktar, player, szoba, 1);
+                            
+                            palyaMegjelenites("pálya1");
                             break;
                         }
                     }
