@@ -321,10 +321,6 @@ namespace FFTkTheTalesofTheHistoryExam
                     Console.WriteLine();
                 }
 
-                Console.WriteLine(jelenlegiY);
-                Console.WriteLine(jelenlegiX);
-                Console.WriteLine(lentiAjtoYX[0]);
-                Console.WriteLine(lentiAjtoYX[1]);
                 Console.Write($"Életerő: ");
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(harc.Elet);
