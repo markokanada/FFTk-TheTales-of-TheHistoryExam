@@ -4,15 +4,62 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-
+using System.Threading;
 
 namespace FFTkTheTalesofTheHistoryExam
 {
     internal class Mozgas : IMozgas
     {
-
+        Harc harc = new Harc();
+        static List<Ellenfel> ellenfelek = new List<Ellenfel>();
 
         private int PalyaIndex = 1;
+
+        public void Interakcio()
+        {
+            Console.Write("Utadat egy ellenség állja, szeretnél harcolni vele ? I/N: ");
+            string SzeretneHarcolniVagySem = Console.ReadLine();
+
+            if (SzeretneHarcolniVagySem == "I" || SzeretneHarcolniVagySem == "i")
+            {
+                harc.Harcolas(ellenfelek[0]);
+
+                if (harc.Elpusztitas(ellenfelek[0]))
+                {
+                    palya[jelenlegiY + 1, jelenlegiX] = " ";
+                    palya[jelenlegiY + 1, jelenlegiX - 1] = " ";
+                    palya[jelenlegiY + 1, jelenlegiX + 1] = " ";
+                    ellenfelek.RemoveAt(0);
+                }
+            }
+        }
+
+        public int EllenfelDarab()
+        {
+            int ellenfeldb = 0;
+
+            for (int i = 0; i < Palya.GetLength(0); i++)
+            {
+                for (int j = 0; j < Palya.GetLength(1); j++)
+                {
+                    if (Palya[i, j] == "!")
+                    {
+                        ellenfeldb++;
+                    }
+                }
+            }
+
+            return ellenfeldb;
+        }
+
+        public void EllenfelCsinalas()
+        {
+            for (int i = 0; i < EllenfelDarab(); i++)
+            {
+                Ellenfel ellenfel = new Ellenfel();
+                ellenfelek.Add(ellenfel);
+            }
+        }
 
         public int PalyaIndexNoveles()
         {
@@ -238,13 +285,19 @@ namespace FFTkTheTalesofTheHistoryExam
         
         public void MozgasAPalyan()
         {
-
+            EllenfelDarab();
+            EllenfelCsinalas();
             bool playing = true;
             while (playing)
             {
                 int[] lentiAjtoYX = LentiAjto();
                 int[] fentiAjtoYX = FentiAjto();
                 Console.CursorVisible = false;
+
+                if (Palya[jelenlegiY + 1, jelenlegiX] == "!")
+                {
+                    Interakcio();
+                }
 
                 for (int i = 0; i < Palya.GetLength(0); i++)
                 {
@@ -268,13 +321,22 @@ namespace FFTkTheTalesofTheHistoryExam
                     Console.WriteLine();
                 }
 
-                
-
-
-
                 Console.WriteLine(jelenlegiY);
                 Console.WriteLine(jelenlegiX);
-                Console.WriteLine(PalyaIndex);
+                Console.WriteLine(lentiAjtoYX[0]);
+                Console.WriteLine(lentiAjtoYX[1]);
+                Console.Write($"Életerő: ");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(harc.Elet);
+                Console.ResetColor();
+                Console.Write($"Páncél: ");
+                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.WriteLine(harc.Pancel);
+                Console.ResetColor();
+                if (harc.Elet < 70)
+                {
+                    Console.WriteLine("élet töltése -> \"g\"");
+                }
 
                 ConsoleKeyInfo keyInfo;
                 keyInfo = Console.ReadKey();
@@ -300,6 +362,10 @@ namespace FFTkTheTalesofTheHistoryExam
                 {
                     playing = false;
                 }
+                else if (keyInfo.Key == ConsoleKey.G && harc.Elet < 70)
+                {
+                    harc.Elet += 50;
+                }
 
 
 
@@ -310,6 +376,8 @@ namespace FFTkTheTalesofTheHistoryExam
                     {
                         PalyaIndex = PalyaIndexNoveles();
                         Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
+                        EllenfelDarab();
+                        EllenfelCsinalas();
                         jelenlegiY = 0;
                         jelenlegiX = 0;
 
@@ -322,11 +390,16 @@ namespace FFTkTheTalesofTheHistoryExam
                     {
                         PalyaIndex = PalyaIndexCsokkentes();
                         Palya = palyaBeolvasas($"pálya{PalyaIndex}.txt");
+                        EllenfelDarab();
+                        EllenfelCsinalas();
                         jelenlegiY = 0;
                         jelenlegiX = 0;
 
                     }
                 }
+
+
+                
 
 
 

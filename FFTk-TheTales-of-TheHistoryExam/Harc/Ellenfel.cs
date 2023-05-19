@@ -15,7 +15,7 @@ namespace FFTkTheTalesofTheHistoryExam
             Random random = new Random();
 
             Elet = 50;
-            SebzesMertek = random.Next(10, 16);
+            SebzesMertek = random.Next(10, 13);
             VedelemMertek = random.Next(1, 6);
             Pancel = 15;
         }
