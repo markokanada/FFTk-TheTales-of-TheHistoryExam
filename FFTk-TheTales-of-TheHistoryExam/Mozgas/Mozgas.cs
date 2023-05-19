@@ -285,6 +285,7 @@ namespace FFTkTheTalesofTheHistoryExam
         
         public void MozgasAPalyan()
         {
+            Console.ResetColor();
             EllenfelDarab();
             EllenfelCsinalas();
             bool playing = true;
