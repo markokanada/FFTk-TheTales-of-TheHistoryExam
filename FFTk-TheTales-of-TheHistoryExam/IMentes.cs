@@ -9,7 +9,7 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     internal interface IMentes
     {
-        bool JatekMentes(Raktar raktar, Harc jatekos, SzobaFactory szoba);
+        bool JatekMentes(Raktar raktar, Harc jatekos);
         bool MentesTorles();
     }
 }

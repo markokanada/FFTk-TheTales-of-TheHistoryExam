@@ -11,7 +11,7 @@ namespace FFTkTheTalesofTheHistoryExam
     internal class Mentes
     {
 
-        public void JatekMentes(Raktar raktar, Harc jatekos, SzobaFactory szoba,int type) //0: betöltés, 1: létrehozás
+        public void JatekMentes(Raktar raktar, Harc jatekos,int type) //0: betöltés, 1: létrehozás
         {
             DirectoryInfo mentesiFajlok = new DirectoryInfo("Mentesek/");
             Megjelenites megjelenito = new Megjelenites();
@@ -88,8 +88,7 @@ namespace FFTkTheTalesofTheHistoryExam
                                            $"Pont:{jatekos.Pont}\n" +
                                            $"SebzesMertek:{jatekos.SebzesMertek}\n" +
                                            $"VedelemMertek:{jatekos.VedelemMertek}\n" +
-                                           $"Pancel:{jatekos.Pancel}\n" +
-                                           $"SzobaId:{szoba.Id}";
+                                           $"Pancel:{jatekos.Pancel}\n";
 
                 sw.WriteLine(menteniValoDolgok);
                 sw.Close();

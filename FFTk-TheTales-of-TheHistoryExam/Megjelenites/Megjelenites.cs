@@ -409,7 +409,7 @@ namespace FFTkTheTalesofTheHistoryExam
                     else if (keyInfo.Key == ConsoleKey.Enter)
                     {
                         Harc player = new Harc();
-                        SzobaFactory szoba = new SzobaFactory();
+                        //SzobaFactory szoba = new SzobaFactory();
                         Mentes mentes = new Mentes();
                         Raktar raktar = new Raktar(5);
 
@@ -417,8 +417,8 @@ namespace FFTkTheTalesofTheHistoryExam
                         //Console.WriteLine("A(z) " + menuItems[selectedIndex] + " opció lett kiválasztva.");
                         //Console.ReadKey();
                         if (menuItems[selectedIndex] == "Mentés betöltése")
-                        {
-                            mentes.JatekMentes(raktar, player, szoba, 0);
+                        {                               //, szoba
+                            mentes.JatekMentes(raktar, player, 0);
                         }
 
                         if (menuItems[selectedIndex] == "Új játék kezdése")
