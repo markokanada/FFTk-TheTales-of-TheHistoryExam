@@ -11,13 +11,15 @@ namespace FFTkTheTalesofTheHistoryExam
 
         public static void Main(string[] args)
         {
-            Megjelenites megjelenito = new Megjelenites();
+            //Megjelenites megjelenito = new Megjelenites();
             //megjelenito.palyaMegjelenites("pálya1");
             //megjelenito.GombMegjelenites("[E] lenyomása az interakcióhoz");
 
             
-            megjelenito.menuMegjelenites(0);
+            //megjelenito.menuMegjelenites(0);
 
+            Factory factory = new Factory();
+            factory.Letrehoz();
 
             //Mozgas mozgas = new Mozgas();
 
