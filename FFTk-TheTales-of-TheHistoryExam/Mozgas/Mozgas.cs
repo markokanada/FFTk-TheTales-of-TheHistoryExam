@@ -12,6 +12,7 @@ namespace FFTkTheTalesofTheHistoryExam
     {
         Harc harc = new Harc();
         static List<Ellenfel> ellenfelek = new List<Ellenfel>();
+        Raktar raktar = new Raktar(10);
 
         private int PalyaIndex = 1;
 
@@ -299,6 +300,45 @@ namespace FFTkTheTalesofTheHistoryExam
                 {
                     Interakcio();
                 }
+                else if (Palya[jelenlegiY + 1, jelenlegiX] == "?" || Palya[jelenlegiY - 1, jelenlegiX] == "?")
+                {
+                    Random rnd = new Random();
+
+                    int[] targyHelyeYX = new int[2];
+
+                    if (Palya[jelenlegiY + 1, jelenlegiX] == "?")
+                    {
+                        targyHelyeYX[0] = jelenlegiY + 1; targyHelyeYX[1] = jelenlegiX;
+                    }
+                    else
+                    {
+                        targyHelyeYX[0] = jelenlegiY - 1; targyHelyeYX[1] = jelenlegiX;
+                    }
+
+                    string targyNeve = raktar.felvehetoTargyak[rnd.Next(0, raktar.felvehetoTargyak.Count)];
+                    Console.Write($"A földön hever egy {targyNeve}, elteszed a raktáradba ? I/N: ");
+                    string targyInputValasz = Console.ReadLine();
+                    Console.Clear();
+
+                    if (targyInputValasz == "I")
+                    {
+                        raktar.TargyHozzadas(targyNeve);
+
+
+                        if (jelenlegiY < targyHelyeYX[0])
+                        {
+                            palya[jelenlegiY + 1, jelenlegiX] = " ";
+                            palya[jelenlegiY + 1, jelenlegiX - 1] = " ";
+                            palya[jelenlegiY + 1, jelenlegiX + 1] = " ";
+                        }
+                        else
+                        {
+                            palya[jelenlegiY - 1, jelenlegiX] = " ";
+                            palya[jelenlegiY - 1, jelenlegiX - 1] = " ";
+                            palya[jelenlegiY - 1, jelenlegiX + 1] = " ";
+                        }
+                    }
+                }
 
                 for (int i = 0; i < Palya.GetLength(0); i++)
                 {
@@ -362,6 +402,10 @@ namespace FFTkTheTalesofTheHistoryExam
                 else if (keyInfo.Key == ConsoleKey.G && harc.Elet < 70)
                 {
                     harc.Elet += 50;
+                }
+                else if (keyInfo.Key == ConsoleKey.Tab)
+                {
+                    raktar.raktarInterakcio();
                 }
 
 
