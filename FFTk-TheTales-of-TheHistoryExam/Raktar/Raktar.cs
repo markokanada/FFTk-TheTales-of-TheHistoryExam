@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,12 @@ namespace FFTkTheTalesofTheHistoryExam
 {
     internal class Raktar : IRaktar
     {
+        public readonly List<string> felvehetoTargyak = new List<string>
+        {
+            "kard", "alma", "kenyér", "pénz", "gyűrű", "szövet", "kavics", "lapát", "cukor"
+        };
+
+
         private int meret;
         public int Meret
         {
@@ -81,6 +88,89 @@ namespace FFTkTheTalesofTheHistoryExam
             }
         }
 
+        public void raktarInterakcio()
+        {
+            bool raktarRendezes = true;
+
+            int raktarJelenlegiIndex = 0;
+            while (raktarRendezes)
+            {
+                Console.Clear();
+
+                string[] raktarTargyak = RaktarLekerdezes();
+
+                int raktarMin = raktarTargyak.Length - raktarTargyak.Length;
+                int raktarMax = raktarTargyak.Count(x => x != null);
+
+                Console.WriteLine("--- RAKTÁR ---\n");
+
+                Console.WriteLine($"\nSzabad helyek száma: {raktarTargyak.Length - raktarTargyak.Count(x => x != null)}\n");
+                Console.WriteLine($"Tárgy törlése: [DEL]");
+
+                if (raktarTargyak.Count(x => x != null) == 0)
+                {
+                    Console.WriteLine("[ÜRES]");
+                }
+                else
+                {
+                    for (int i = 0; i < raktarTargyak.Count(x => x != null); i++)
+                    {
+                        if (i == raktarJelenlegiIndex)
+                        {
+                            Console.BackgroundColor = ConsoleColor.DarkGreen;
+                            Console.Write(raktarTargyak[raktarJelenlegiIndex]);
+                            Console.ResetColor();
+                            Console.WriteLine();
+                        }
+                        else
+                        {
+                            Console.WriteLine(raktarTargyak[i]);
+                        }
+                    }
+                }
+
+                ConsoleKeyInfo keyInfo;
+                keyInfo = Console.ReadKey();
+                if (keyInfo.Key == ConsoleKey.DownArrow)
+                {
+                    if (raktarJelenlegiIndex == raktarMax - 1)
+                    {
+                        raktarJelenlegiIndex = raktarMin;
+                    }
+                    else
+                    {
+                        raktarJelenlegiIndex++;
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.UpArrow)
+                {
+                    if (raktarJelenlegiIndex == raktarMin)
+                    {
+                        raktarJelenlegiIndex = raktarMax - 1;
+                    }
+                    else
+                    {
+                        raktarJelenlegiIndex--;
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.Delete)
+                {
+                    TargyTorles(raktarTargyak[raktarJelenlegiIndex]);
+
+                    if (raktarJelenlegiIndex > raktarMin)
+                    {
+                        raktarJelenlegiIndex--;
+                    }
+                }
+                else if (keyInfo.Key == ConsoleKey.Tab)
+                {
+                    raktarRendezes = false;
+                }
+
+                
+
+            }
+        }
 
         public Raktar(int meret)
         {
