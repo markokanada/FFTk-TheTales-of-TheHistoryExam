@@ -8,10 +8,14 @@ namespace FFTkTheTalesofTheHistoryExam.Szoba
 {
     internal interface ISzoba
     {
-        //"id":0;"név":"Kezdő szoba";"Történet":"Ez egy kezdő szoba";"Kilépési_pont":"szoba2"
         int Id { get; }
         string Nev { get; }
+        string Leiras { get; }
         string Tortenet { get; }
-        string KilepesiPont { get; }
+        int EllenfelekSzama { get; }
+        int NPCkSzama { get; }
+        List<ISzoba> Targyak { get; }
+        List<ISzoba> Szobak { get; }
+        int KuldetesekSzama { get;}
     }
 }

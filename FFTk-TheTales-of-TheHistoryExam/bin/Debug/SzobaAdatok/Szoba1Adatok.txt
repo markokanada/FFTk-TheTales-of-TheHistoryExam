@@ -1,0 +1,7 @@
+id:1
+nev:Szoba1
+leiras:Leiras1
+tortenet:Tortenet1
+ellenfelekszama:1
+npckszama:2
+kuldetesekszama:2

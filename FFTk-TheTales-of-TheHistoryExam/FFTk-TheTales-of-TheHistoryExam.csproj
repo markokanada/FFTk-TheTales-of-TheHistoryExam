@@ -30,6 +30,7 @@
     <Reference Include="System" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Factory\Factory.cs" />
     <Compile Include="Harc\Ellenfel.cs" />
     <Compile Include="Harc\Harc.cs" />
     <Compile Include="Harc\IGyogyulas.cs" />
@@ -63,8 +64,7 @@
     <Compile Include="Mozgas\IMMozgas.cs" />
     <Compile Include="Raktar\Raktar.cs" />
     <Compile Include="Szoba\ISzoba.cs" />
-    <Compile Include="Szoba\ISzobaFactory.cs" />
-    <Compile Include="Szoba\SzobaFactory.cs" />
+    <Compile Include="Szoba\Szoba.cs" />
     <Compile Include="Targy\IFegyver.cs" />
     <Compile Include="Targy\IGyogyitok.cs" />
     <Compile Include="Targy\IHasznalas.cs" />
