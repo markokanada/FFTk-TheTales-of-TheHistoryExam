@@ -92,8 +92,17 @@ namespace FFTkTheTalesofTheHistoryExam.Szoba
             }
         }
 
-        public List<ISzoba> Targyak { get; private set; }
-        public List<ISzoba> Szobak { get; private set; }
+        public List<string> Targyak { get; private set; }
 
+        public Szoba(int szobaId, string szobaNev, string szobaLeiras, string szobaTortenet, int ellenfelekSzama, int npckSzama, int kuldetesekSzama)
+        {
+            Id = szobaId;
+            Nev = szobaNev;
+            Leiras = szobaLeiras;
+            Tortenet = szobaTortenet;
+            EllenfelekSzama = ellenfelekSzama;
+            NPCkSzama = npckSzama;
+            KuldetesekSzama = kuldetesekSzama;
+        }
     }
 }

@@ -14,8 +14,6 @@ namespace FFTkTheTalesofTheHistoryExam.Szoba
         string Tortenet { get; }
         int EllenfelekSzama { get; }
         int NPCkSzama { get; }
-        List<ISzoba> Targyak { get; }
-        List<ISzoba> Szobak { get; }
         int KuldetesekSzama { get;}
     }
 }
