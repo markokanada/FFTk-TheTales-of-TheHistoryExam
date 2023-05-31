@@ -1,7 +1,7 @@
-id:1
-nev:Szoba1
-leiras:Leiras1
-tortenet:Tortenet1
-ellenfelekszama:1
-npckszama:2
-kuldetesekszama:2
+szobaId:1
+szobaNev:nev1
+szobaLeiras:leiras1
+szobaTortenet:tortenet1
+ellenfelekSzama:2
+npckSzama:2
+kuldetesekSzama:2

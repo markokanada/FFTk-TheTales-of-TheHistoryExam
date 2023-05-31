@@ -11,50 +11,65 @@ namespace FFTkTheTalesofTheHistoryExam.Szoba
     internal class Factory
     {
         //adatok beolvasása fájlból
-        public void Letrehoz()
+        public void Letrehoz(string szobaAdatokTXT, string ellenfelAdatokTXT, string npcAdatokTXT, string kuldetesAdatokTXT, string targyAdatokTXT)
         {
-            int id = 0;
-            string nev = "";
-            string leiras = "";
-            string tortenet = "";
+            #region szobaAdatok
+            int szobaId = 0;
+            string szobaNev = "";
+            string szobaLeiras = "";
+            string szobaTortenet = "";
             int ellenfelekSzama = 0;
             int npckSzama = 0;
             int kuldetesekSzama = 0;
+            #endregion
 
-            StreamReader sr = new StreamReader("SzobaAdatok/Szoba1Adatok.txt", Encoding.UTF8);
+            #region ellenfelAdatok
+            int ellenfelId = 0;
+            string ellenfelNev = "";
+            string ellenfelLeiras = "";
+            int ellenfelElet = 0;
+            int ellenfelSebzesMertek = 0;
+            int ellenfelVedelemMertek = 0;
+            int ellenfelPancel = 0;
+            bool ellenfelEletbenVan = true;
             
+            #endregion
+
+
+            StreamReader sr = new StreamReader($"SzobaAdatok/{szobaAdatokTXT}.txt", Encoding.UTF8);
+            
+            //szobaAdatokTXT
             while (!sr.EndOfStream)
             {
                 string[] sor = sr.ReadLine().Split(':');
                 switch (sor[0])
                 {
-                    case "id":
-                        id = int.Parse(sor[1]);
+                    case "szobaId":
+                        szobaId = int.Parse(sor[1]);
                         break;
-                    case "nev":
-                        nev = sor[1];
+                    case "szobaNev":
+                        szobaNev = sor[1];
                         break;
-                    case "leiras":
-                        leiras = sor[1];
+                    case "szobaLeiras":
+                        szobaLeiras = sor[1];
                         break;
-                    case "tortenet":
-                        tortenet = sor[1];
+                    case "szobaTortenet":
+                        szobaTortenet = sor[1];
                         break;
-                    case "ellenfelekszama":
+                    case "ellenfelekSzama":
                         ellenfelekSzama = int.Parse(sor[1]);
                         break;
-                    case "npckszama":
+                    case "npckSzama":
                         npckSzama = int.Parse(sor[1]);
                         break;
-                    case "kuldetesekszama":
+                    case "kuldetesekSzama":
                         kuldetesekSzama = int.Parse(sor[1]);
                         break;
                 }
 
             }
-
-
             sr.Close();
+            Szoba szoba = new Szoba();
 
         }
 

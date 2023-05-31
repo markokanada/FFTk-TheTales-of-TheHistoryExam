@@ -1,0 +1,8 @@
+ellenfelId:0
+ellenfelNev:Ellenfel1
+ellenfelLeiras:leiras1
+ellenfelElet:30
+ellenfelSebzesMertek:0
+ellenfelVedelemMertek:0
+ellenfelPancel:0
+ellenfelEletbenVan:true
