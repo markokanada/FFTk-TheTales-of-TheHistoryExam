@@ -32,7 +32,19 @@ namespace FFTkTheTalesofTheHistoryExam.Szoba
             int ellenfelVedelemMertek = 0;
             int ellenfelPancel = 0;
             bool ellenfelEletbenVan = true;
-            
+
+            #endregion
+
+            #region npcAdatok
+            //TO DO
+            #endregion
+
+            #region kuldetesAdatok
+            //TO DO
+            #endregion
+
+            #region targyAdatok
+            //TO DO
             #endregion
 
 
@@ -69,7 +81,7 @@ namespace FFTkTheTalesofTheHistoryExam.Szoba
 
             }
             sr.Close();
-            Szoba szoba = new Szoba();
+            Szoba szoba = new Szoba(szobaId, szobaNev, szobaLeiras, szobaTortenet, ellenfelekSzama, npckSzama, kuldetesekSzama);
 
         }
 
