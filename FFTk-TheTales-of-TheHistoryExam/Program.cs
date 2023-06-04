@@ -30,7 +30,8 @@ namespace FFTkTheTalesofTheHistoryExam
             //Console.WriteLine(mentes.JatekMentes(raktar, player, szoba));
             //Console.WriteLine(mentes.MentesTorles());
 
-
+            
+            //Console.WriteLine(kviz.Pont());
 
             Console.ReadKey();
         }

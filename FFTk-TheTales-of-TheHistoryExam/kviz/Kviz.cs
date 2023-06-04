@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace FFTkTheTalesofTheHistoryExam.kviz
+namespace FFTkTheTalesofTheHistoryExam
 {
 
     class Kviz : Ikerdes
@@ -64,7 +64,7 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
             return kerdesek;
         }
 
-        public string[] kvizTest(string FajlNev)
+        public string kvizTest(string FajlNev)
         {
             
             //Kvíz
@@ -94,21 +94,39 @@ namespace FFTkTheTalesofTheHistoryExam.kviz
                     pont += 1;
                     Pont();
                 }
-
-                Console.WriteLine();
+                
+                Console.Clear();
             }
 
             //Megjelenítéshez 
             
 
-            string[] megjelenites = new string[] { pont.ToString() };
+            string megjelenites =  "Elért pontszám: " + pont.ToString() ;
             return megjelenites;
+
+            
 
         }
 
+        public void pontElmentese()
+        {
+            StreamReader file_r = new StreamReader("kviz/legmagasabbPontszam.txt", Encoding.UTF8);
+            int pontszam = int.Parse(file_r.ReadLine());
+
+            file_r.Close();
+            if (pont > pontszam)
+            {
+                StreamWriter file_a = new StreamWriter("kviz/legmagasabbPontszam.txt", false, Encoding.UTF8);
+
+                file_a.WriteLine(pont);
+
+                file_a.Close();
+
+                Console.WriteLine("Megdöntötted a rekordodat.");
+            }
 
 
-
+        }
 
     }
 }

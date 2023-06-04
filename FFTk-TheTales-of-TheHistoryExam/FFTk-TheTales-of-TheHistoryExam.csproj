@@ -41,6 +41,7 @@
     <Compile Include="Kezeles\IKezeles.cs" />
     <Compile Include="Kommunikacio\IKommunikalas.cs" />
     <Compile Include="Kuldetes\IKuldetesek.cs" />
+    <Compile Include="kviz\Kviz.cs" />
     <Compile Include="Megjelenites\IMegjelenit.cs" />
     <Compile Include="Megjelenites\IMegjelenites.cs" />
     <Compile Include="Mentes.cs" />
@@ -49,7 +50,6 @@
     <Compile Include="Kommunikacio\Kommunikacio.cs" />
     <Compile Include="Kuldetes\Kuldetes.cs" />
     <Compile Include="kviz\Ikerdes.cs" />
-    <Compile Include="kviz\Kviz.cs" />
     <Compile Include="Megjelenites\Megjelenites.cs" />
     <Compile Include="Mozgas\Mozgas.cs" />
     <Compile Include="Program.cs" />

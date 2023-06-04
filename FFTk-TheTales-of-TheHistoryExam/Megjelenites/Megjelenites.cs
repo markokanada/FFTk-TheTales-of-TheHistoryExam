@@ -298,6 +298,49 @@ namespace FFTkTheTalesofTheHistoryExam
                             menuMegjelenites(4);
                         }
 
+                        if (menuItems[selectedIndex] == "Challenge Mode")
+                        {
+                            string kvizFile;
+                            Console.WriteLine("Válaszd ki melyik kvízt szeretnéd megcsinálni: ");
+                            Console.WriteLine("a) Athén");
+                            Console.WriteLine("b) Mátyás Király");
+                            Console.WriteLine("c) Földrajzi felfedezések");
+                            Console.WriteLine("d) Államalapítás");
+                            Console.Write("Válasz: ");
+                            char bekert = Convert.ToChar(Console.ReadLine().ToUpper());
+                            switch (bekert)
+                            {
+                                case 'A':
+                                    kvizFile = "athen.txt";
+                                    Console.WriteLine("Az általad választott téma Athén.");
+                                    break;
+                                case 'B':
+                                    kvizFile = "matyas_kiraly.txt";
+                                    Console.WriteLine("Az általad választott téma Mátyás Király.");
+                                    break;
+                                case 'C':
+                                    kvizFile = "foldrajzi_felfedezesek.txt";
+                                    Console.WriteLine("Az általad választott téma a Földrajzi Felfedezések.");
+                                    break;
+                                case 'D':
+                                    kvizFile = "allamalapitas.txt";
+                                    Console.WriteLine("Az általad választott téma az Államalapítás.");
+                                    break;
+                                default:
+                                    kvizFile = "athen.txt";
+                                    Console.WriteLine("Az általad választott téma Athén.");
+                                    break;
+                            }
+
+                            Console.Clear();
+
+                            Kviz kviz = new Kviz(kvizFile);
+                            Console.WriteLine(kviz.kvizTest(kvizFile));
+                            kviz.pontElmentese();
+
+
+                        }
+
                         if (menuItems[selectedIndex] == "   Credits    ")
                         {
                             menuMegjelenites(5);
@@ -308,7 +351,7 @@ namespace FFTkTheTalesofTheHistoryExam
                             System.Environment.Exit(0);
                         }
                         else { 
-                        Console.WriteLine("A(z) " + menuItems[selectedIndex] + " opció lett kiválasztva.");
+                        //Console.WriteLine("A(z) " + menuItems[selectedIndex] + " opció lett kiválasztva.");
                         }
                         Console.ReadKey();
 
