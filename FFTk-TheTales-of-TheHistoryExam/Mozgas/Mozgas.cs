@@ -317,7 +317,7 @@ namespace FFTkTheTalesofTheHistoryExam
 
                     string targyNeve = raktar.felvehetoTargyak[rnd.Next(0, raktar.felvehetoTargyak.Count)];
                     Console.Write($"A földön hever egy {targyNeve}, elteszed a raktáradba ? I/N: ");
-                    string targyInputValasz = Console.ReadLine();
+                    string targyInputValasz = Console.ReadLine().ToUpper();
                     Console.Clear();
 
                     if (targyInputValasz == "I")
@@ -326,6 +326,44 @@ namespace FFTkTheTalesofTheHistoryExam
 
 
                         if (jelenlegiY < targyHelyeYX[0])
+                        {
+                            palya[jelenlegiY + 1, jelenlegiX] = " ";
+                            palya[jelenlegiY + 1, jelenlegiX - 1] = " ";
+                            palya[jelenlegiY + 1, jelenlegiX + 1] = " ";
+                        }
+                        else
+                        {
+                            palya[jelenlegiY - 1, jelenlegiX] = " ";
+                            palya[jelenlegiY - 1, jelenlegiX - 1] = " ";
+                            palya[jelenlegiY - 1, jelenlegiX + 1] = " ";
+                        }
+                    }
+                }
+                //DEMO
+                else if (Palya[jelenlegiY + 1, jelenlegiX] == "-" || Palya[jelenlegiY - 1, jelenlegiX] == "-")
+                {
+                    Random rnd = new Random();
+
+                    int[] kuldetesHelyeYX = new int[2];
+
+                    if (Palya[jelenlegiY + 1, jelenlegiX] == "-")
+                    {
+                        kuldetesHelyeYX[0] = jelenlegiY + 1; kuldetesHelyeYX[1] = jelenlegiX;
+                    }
+                    else
+                    {
+                        kuldetesHelyeYX[0] = jelenlegiY - 1; kuldetesHelyeYX[1] = jelenlegiX;
+                    }
+
+                    Console.Write($"Küldtés (I/N): ");
+                    string kuldetesInputValasz = Console.ReadLine().ToUpper();
+                    Console.Clear();
+
+                    if (kuldetesInputValasz == "I")
+                    {
+                    
+
+                        if (jelenlegiY < kuldetesHelyeYX[0])
                         {
                             palya[jelenlegiY + 1, jelenlegiX] = " ";
                             palya[jelenlegiY + 1, jelenlegiX - 1] = " ";
